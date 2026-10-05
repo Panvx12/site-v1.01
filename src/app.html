@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="text-scale" content="scale" />
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
+
+<style>
+	/*
+		initContentWidth is the area that initial content cover
+		maxContentWidth is largest area that content can cover 
+	*/
+	:root {
+		--backgroundColor: white;
+		--zLargestIndex: 999;
+		--initContentWidth: 100svw;
+		--maxContentWidth: 1400px;
+		--BorderColorW: rgb(225, 225, 225);
+		--linkHoverColor: #7c93ab;
+	}
+	*, *::before, *::after {
+    	box-sizing: border-box;
+	}
+
+	::-webkit-scrollbar {
+		width: 10px;
+		height: 10px;
+	}
+	::-webkit-scrollbar-thumb:hover {
+		background: #2563eb;
+	}
+	::-webkit-scrollbar-thumb {
+		background: linear-gradient(180deg, #b8c2d6, #2563eb);
+		border-radius: 6px;
+	}
+	::-webkit-scrollbar-track {
+    	background: #dce3ef;
+	}
+
+	html, body {
+		margin: 0;
+		width: 100svw;
+		height: 100svh;
+		overflow-x: hidden;
+		background-color: var(--backgroundColor);
+	}
+</style>

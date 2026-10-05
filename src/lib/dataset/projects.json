@@ -1,0 +1,18 @@
+[
+    {
+        "title": "dev-kit",
+        "summary": "Some useful development kits for a Windows environment.",
+        "status": "UPDATED","sColor" : "#F59E0B",
+        "content": "To streamline the setup process and minimize the hassle of reconfiguring development environment on new machines, I created this file to centralize the installation steps and download sources for all essential tools, ensuring a seamless, rapid transition whenever I switch devices.",
+        "notice": "⚠️ This project has not been tested yet. Please be careful when using it. ⚠️",
+        "link": "https://github.com/Panvx12/dev-kit"
+    },
+    {
+        "title": "Web",
+        "summary": "This is my first web.",
+        "status": "COMPLETED","sColor" : "#52C41A",
+        "content": "This is my very first web project built with HTML, CSS, and JavaScript. I created it to practice fundamental web development skills, turn concepts into interactive UI, and build a solid foundation for future projects.",
+        "notice": "⚠️ Active updates for this website are currently paused. The current contents serve solely as a showcase and record of the existing version. ⚠️",
+        "link": "https://panvx12.github.io/Web/Home/home.html"
+    }
+]
