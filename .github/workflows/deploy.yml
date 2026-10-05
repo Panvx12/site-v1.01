@@ -2,48 +2,48 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
-  workflow_dispatch:
+    branches: 'main'
 
 permissions:
-  id-token: write
   contents: read
   pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
+  deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: 20
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Build site
+      - name: Build
+        env:
+          BASE_PATH: '/${{ github.event.repository.name }}'
         run: npm run build
 
-      - name: Add .nojekyll file
-        run: touch build/.nojekyll
-
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v3
+      - name: Add .nojekyll
+        run: touch ./dist/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./build
+          path: './dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
