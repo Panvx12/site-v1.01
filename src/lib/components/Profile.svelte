@@ -1,10 +1,11 @@
 <script>
     import Contact from "$lib/dataset/contact.json";
+    import avatar from "$lib/assets/avatar.webp";
 </script>
 
 <section class="profile">
     <div class="self">
-        <img class="avatar" src="src/lib/assets/avatar.webp" alt="avatar" />
+        <img class="avatar" src= {avatar} alt="avatar" />
         <h1>鬆餅</h1>
         <p class="annotation">WAFFLE / PANCAKE</p>
         <p>

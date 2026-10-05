@@ -7,6 +7,8 @@
 -->
 
 <script>
+    import logo from "$lib/assets/logo.webp";
+
     import { page } from '$app/state';
 
     const navItems = [
@@ -16,7 +18,7 @@
 
 <nav class="navigation">
     <a href="/" class="logoHref">
-        <img src="../src/lib/assets/logo.webp" alt="Logo">
+        <img src={logo} alt="Logo">
     </a>
     <ul>
         {#each navItems as item}

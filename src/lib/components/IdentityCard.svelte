@@ -1,12 +1,14 @@
 <script>
-    import identityCard from '$lib/dataset/identityCard.json';
-    import skills from '$lib/dataset/skills.json';
+    import identityCard from "$lib/dataset/identityCard.json";
+    import skills from "$lib/dataset/skills.json";
+    import cover0 from "$lib/assets/cover0.webp";
+    import cover1 from "$lib/assets/cover1.webp";
 </script>
 
 <section class="indentity-card">
     <picture>
-        <source media="(max-width: 1100px)" srcset="../src/lib/assets/cover1.webp">
-        <img class=background-img src="../src/lib/assets/cover0.webp" alt="background">
+        <source media="(max-width: 1100px)" srcset= {cover1}>
+        <img class=background-img src={cover0} alt="background">
     </picture>
     <div class="content">
         <div class="idc">

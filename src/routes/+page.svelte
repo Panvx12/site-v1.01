@@ -7,6 +7,8 @@
     import Profile from '$lib/components/Profile.svelte';
     import Progress from '$lib/components/Progress.svelte';
     import Footer from '$lib/components/Footer.svelte';
+
+    import avatar from "$lib/assets/avatar1.webp";
 </script>
 
 <main>
@@ -18,7 +20,7 @@
 
         <h1>AVATAR</h1>
         <p class="annotation">// 虛擬形象</p>
-        <img class="avatar" src="src/lib/assets/avatar1.webp" alt="avatar">
+        <img class="avatar" src= {avatar} alt="avatar">
 
         <h1>IN PROGRESS</h1>
         <p class="annotation">// 專案開發</p>
