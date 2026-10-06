@@ -11,5 +11,11 @@
         width: 100%;
         height: 70px;
         border-top: 1px solid silver;
+        font-size: 1rem;
+    }
+    @media (max-width: 1100px) {
+        .footer {
+            font-size: 0.5rem;
+        }
     }
 </style>

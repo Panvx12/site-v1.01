@@ -143,7 +143,7 @@
             grid-template-columns: 1fr;
             grid-template-rows: repeat(2, 1fr);
             width: 80%;
-            top: 20%;
+            top: 10%;
             left: 10%;
         }
     }
