@@ -8,6 +8,7 @@
 
 <script>
     import logo from "$lib/assets/logo.webp";
+    import { resolve } from '$app/paths';
 
     import { page } from '$app/state';
 
@@ -17,13 +18,13 @@
 </script>
 
 <nav class="navigation">
-    <a href="/" class="logoHref">
+    <a href={resolve('/')} class="logoHref">
         <img src={logo} alt="Logo">
     </a>
     <ul>
         {#each navItems as item}
             <li>
-                <a href={item.href} class:active={page.url.pathname === item.href}>
+                <a href={resolve(item.href)} class:active={page.url.pathname === item.href}>
                     {item.name}
                 </a>
             </li>
