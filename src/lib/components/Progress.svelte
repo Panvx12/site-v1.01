@@ -63,7 +63,7 @@
 
     .tech-tags {
         display: flex;
-        width: 60%;
+        width: 100%;
         gap: 8px;
         margin-bottom: 16px;
         flex-wrap: wrap;
