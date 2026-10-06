@@ -10,9 +10,8 @@
         <p class="annotation">WAFFLE / PANCAKE</p>
         <p>
             I am a university student from Taiwan, currently studying Electrical Engineering at National Formosa University.
-            I have a strong interest in programming and software development. I enjoy learning new technologies through hands-on projects and practical experience.
-            In addition to learning programming languages and development tools, I also enjoy turning my ideas into real-world projects.
-            From development and testing to continuous improvement, I strive to gain experience and grow through building things myself.
+            I have a strong interest in programming and software development.
+            I enjoy learning new technologies through hands-on projects and practical experience.
         </p>
         <span class="tag-box">STUDENT</span>
         <span class="tag-box">EE</span>
