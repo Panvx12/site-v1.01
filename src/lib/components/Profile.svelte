@@ -102,12 +102,12 @@
         border-bottom: 1px solid rgb(74, 74, 74);
     }
     .contact-item p {
-        font-size: 1.25rem;
+        font-size: 1rem;
         margin: 0;
     }
     .contact-item a {
         margin: 0;
-        font-size: 1.25rem;
+        font-size: 1rem;
         text-decoration: none;
         color: black;
     }
@@ -132,6 +132,12 @@
         .avatar {
             width: 150px;
             height: 150px;
+        }
+        .contact-item p {
+            font-size: 0.8rem;
+        }
+        .contact-item a {
+            font-size: 0.8rem;
         }
     }
 </style>
