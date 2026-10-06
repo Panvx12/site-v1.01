@@ -35,6 +35,7 @@
     .card-header {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         align-items: center;
         margin-bottom: 12px;
     }
