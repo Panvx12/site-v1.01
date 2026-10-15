@@ -146,5 +146,17 @@
             top: 5%;
             left: 10%;
         }
+        .idc {
+            font-size: 0.7rem;
+        }
+        .brief {
+            font-size: 0.7rem;
+        }
+        .skills {
+            font-size: 0.7rem;
+        }
+        .skill-box {
+            font-size: 0.7rem;
+        }
     }
 </style>
