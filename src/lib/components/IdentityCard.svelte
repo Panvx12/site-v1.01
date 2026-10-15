@@ -65,6 +65,7 @@
         height: 100%;
         padding: 10px;
         background: linear-gradient(135deg, #ffffffc7, #f1f4fbb3);
+        backdrop-filter: blur(10px);
     }
     .idc-divider {
         margin: 15px 0 10px 0;
@@ -118,10 +119,12 @@
         margin-bottom: 20px;
         padding: 10px;
         background: linear-gradient(135deg, #ffffffc7, #f1f4fbb3);
+        backdrop-filter: blur(10px);
     }
     .skills {
         padding: 10px;
         background: linear-gradient(135deg, #ffffffc7, #f1f4fbb3);
+        backdrop-filter: blur(10px);
     }
     .skill-box {
         display: inline-block;
