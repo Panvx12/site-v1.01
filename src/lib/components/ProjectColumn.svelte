@@ -1,69 +1,71 @@
 <script>
-    import items from "$lib/dataset/projects.json";
+    import items from '$lib/dataset/projects.json'
 </script>
 
-<section class="container">
-    {#each items as item}
+{#each items as item}
+    <a class="link" href="{item.link}">
         <div class="column">
-            <h1>{item.title}</h1>
-            <h2>{item.summary}</h2>
-            <span class="status" style="background-color: {item.sColor}">{item.status}</span>
-            <div class="content">
-                <p class="content">{item.content}</p>
-                <p class="notice">{item.notice}</p>
-                <a class="source" href={item.link} target="_blank">SOURCE</a>
+            <div class="header">
+                <p>→</p>
+                <p class="time">{item.time}</p>
+                <p class="type">{item.type}</p>
+                <p class="title">{item.title}</p>
+            </div>
+            <div class="end">
+                <p class="status">{item.status}</p>
+                <p>←</p>
             </div>
         </div>
-    {/each}
-</section>
+    </a>
+{/each}
 
 <style>
-    h1, h2{ 
-        margin: 0 0 10px 0;
-    }
-    .container {
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-        gap: 16px;
+    .link {
+        text-decoration: none;
     }
     .column {
-        padding: 30px;
-        width: 100%;
-        border: 1px solid rgba(0, 0, 0, 0.1);
+        margin: auto;
+        margin-bottom: 10px;
+        padding: 5px 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         background-color: aliceblue;
     }
-    .status {
-        display: inline-block;
-        margin: 0 0 10px 0;
-        padding: 3px 10px;
+    .header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: aliceblue;
+        flex: 1;
+        gap: 20px;
+    }
+    .header::after {
+        content: "";
+        flex: 1;
+        height: 0;
+        border-bottom: 1px dashed rgb(74, 74, 74);
+    }
+    .end {
+        margin-left: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: aliceblue;
+        gap: 20px;
+    }
+    .time {
+        color: rgb(74, 74, 74);
+    }
+    .type {
+        font-weight: 700;
         color: black;
-        font-weight: 600;
-        border-radius: 9999px;
     }
-    .status:hover {
-        cursor: pointer;
+    .title {
+        font-weight: 700;
+        color: black;
     }
-    .content {
-        margin: 0 0 10px 0;
-    }
-    .notice{
-        margin-bottom: 20px;
-        color: red;
-        text-shadow: 0 0 10px red;
-    }
-    .source {
-        padding: 6px 14px;
-        color: #38bdf8;
-        background: rgba(56, 189, 248, 0.1);
-        border: 1px solid rgba(56, 189, 248, 0.3);
-        border-radius: 6px;
-        text-decoration: none;
-        font-size: 1.2rem;
-        font-weight: 500;
-    }
-    @media (max-width: 1100px) {
-        .container {
-            grid-template-columns: 1fr;
-        }
+    .status {
+        color: rgb(74, 74, 74);
     }
 </style>
