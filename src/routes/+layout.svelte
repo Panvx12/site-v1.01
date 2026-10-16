@@ -1,8 +1,10 @@
 <script>
-	import icon from '$lib/assets/icon.webp';
+	import Loading from '$lib/components/Loading.svelte';
     import  Navigation  from '$lib/components/Navigation.svelte';
 	import Marquee from '$lib/components/Marquee.svelte';
 	import { afterNavigate } from '$app/navigation';
+
+	import icon from '$lib/assets/icon.webp';
 
 	let { children } = $props();
 
@@ -21,11 +23,13 @@
 </svelte:head>
 
 <main>
+	<Loading />
 	<!--this section combine marquee and nav,and marquee is on nav-->
-		<section class="marqueeCombineNav">
-			<Marquee />
-			<Navigation />
-		</section>
+	<section class="marqueeCombineNav">
+		<Marquee />
+		<Navigation />
+	</section>
+
 	{@render children()}
 </main>
 
