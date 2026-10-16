@@ -7,13 +7,13 @@
         <a class="link" href="{item.link}">
             <div class="column">
                 <div class="header">
-                    <p class="arrow">→</p>
-                    <p class="time">{item.time}</p>
-                    <p class="type">{item.type}</p>
-                    <p class="title">{item.title}</p>
+                    <span class="arrow">→</span>
+                    <span class="time">{item.time}</span>
+                    <span class="type" style="color:{item.tColor}">{item.type}</span>
+                    <span class="title">{item.title}</span>
                 </div>
                 <div class="end">
-                    <p class="status">{item.status}</p>
+                    <span class="status">{item.status}</span>
                 </div>
             </div>
         </a>
@@ -31,9 +31,11 @@
         width: 80%;
     }
     .link {
+        color: inherit;
         text-decoration: none;
     }
     .column {
+        min-height: 50px;
         margin: auto;
         padding: 5px 10px;
         width: 100%;
@@ -66,9 +68,6 @@
         align-items: center;
         gap: 20px;
     }
-    .arrow {
-        color: black;
-    }
     .time {
         margin: 0;
         color: var(--sliver);
@@ -76,12 +75,10 @@
     .type {
         margin: 0;
         font-weight: 700;
-        color: black;
     }
     .title {
         margin: 0;
         font-weight: 700;
-        color: black;
     }
     .status {
         margin: 0;
@@ -90,6 +87,9 @@
     @media (max-width: 800px) {
         .projects-list {
             width: 100%;
+        }
+        .column {
+            min-height: 35px;
         }
         .header {
             gap: 10px;
