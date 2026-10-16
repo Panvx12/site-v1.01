@@ -1,5 +1,5 @@
 <script>
-    import ProjectColumn from "$lib/components/ProjectColumn.svelte";
+    import ProjectsList from "$lib/components/ProjectsList.svelte";
 </script>
 
 <svelte:head>
@@ -10,7 +10,7 @@
     <section class="content">
         <h1>PROJECTS</h1>
         <p class="annotation">/ / 專案成果</p>
-        <ProjectColumn />
+        <ProjectsList />
     </section>
 </main>
 
