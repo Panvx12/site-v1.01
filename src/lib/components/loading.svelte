@@ -65,6 +65,7 @@
         }
         100% {
             opacity: 0;
+            visibility: hidden;
             display: none;
         }
     }
