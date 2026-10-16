@@ -2,35 +2,46 @@
     import items from '$lib/dataset/projects.json'
 </script>
 
-{#each items as item}
-    <a class="link" href="{item.link}">
-        <div class="column">
-            <div class="header">
-                <p class="arrow">→</p>
-                <p class="time">{item.time}</p>
-                <p class="type">{item.type}</p>
-                <p class="title">{item.title}</p>
+<div class="projects-list">
+    {#each items as item}
+        <a class="link" href="{item.link}">
+            <div class="column">
+                <div class="header">
+                    <p class="arrow">→</p>
+                    <p class="time">{item.time}</p>
+                    <p class="type">{item.type}</p>
+                    <p class="title">{item.title}</p>
+                </div>
+                <div class="end">
+                    <p class="status">{item.status}</p>
+                </div>
             </div>
-            <div class="end">
-                <p class="status">{item.status}</p>
-            </div>
-        </div>
-    </a>
-{/each}
+        </a>
+    {/each}
+</div>
 
 <style>
+    .projects-list {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid var(--sliver);
+        border-left: 1px solid var(--sliver);
+        border-right: 1px solid var(--sliver);
+        width: 80%;
+    }
     .link {
         text-decoration: none;
     }
     .column {
         margin: auto;
         padding: 5px 10px;
-        width: 80%;
+        width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         background-color: white;
-        border: 1px solid var(--sliver);
+        border-bottom: 1px solid var(--sliver);
     }
     .column:hover {
         background-color: aliceblue
@@ -77,11 +88,14 @@
         color: var(--sliver);
     }
     @media (max-width: 800px) {
-        .column {
+        .projects-list {
             width: 100%;
         }
         .header {
             gap: 10px;
+        }
+        .arrow {
+            font-size: 0.5rem;
         }
         .time {
             font-size: 0.8rem;
