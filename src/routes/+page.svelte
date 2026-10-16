@@ -56,5 +56,8 @@
         h1 {
             font-size: 2.5rem;
         }
+        .avatar {
+            width: 100%;
+        }
     }
 </style>

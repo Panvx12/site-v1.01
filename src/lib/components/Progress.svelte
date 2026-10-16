@@ -25,7 +25,7 @@
 <style>
     .progress {
         margin: 20px auto;
-        width: 90%;
+        width: 80%;
         height: fit-content;
         border: 1px solid #333;
         padding: 20px;
@@ -92,5 +92,10 @@
         background: #00f2fe;
         box-shadow: 0 0 5px #00f2fe;
         border-radius: 4px;
+    }
+    @media (max-width: 1100px) {
+        .progress {
+            width: 100%;
+        }
     }
 </style>

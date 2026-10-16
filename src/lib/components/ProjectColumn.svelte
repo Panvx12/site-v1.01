@@ -77,6 +77,12 @@
         color: var(--sliver);
     }
     @media (max-width: 800px) {
+        .column {
+            width: 100%;
+        }
+        .header {
+            gap: 10px;
+        }
         .time {
             font-size: 0.8rem;
         }
