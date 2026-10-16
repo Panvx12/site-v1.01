@@ -6,6 +6,7 @@
 
 	let { children } = $props();
 
+	// 刷新頁面統一從最上面開始
 	afterNavigate(() => {
         requestAnimationFrame(() => {
             window.scrollTo(0, 0);
