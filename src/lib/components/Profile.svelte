@@ -54,7 +54,7 @@
     }
     .annotation {
         margin: 0 0 5px 0;
-        color: rgb(74, 74, 74);
+        color: var(--sliver);
         font-size: 1rem;
     }
     .self h1 {

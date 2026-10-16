@@ -30,7 +30,7 @@
     }
     .annotation {
         margin: 0 0 40px 0;
-        color: rgb(74, 74, 74);
+        color: var(--sliver);
         font-size: 1.5rem;
     }
     @media (max-width: 1100px) {

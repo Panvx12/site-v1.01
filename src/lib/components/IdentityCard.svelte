@@ -58,7 +58,7 @@
     }
     .annotation {
         margin: 5px 0;
-        color: rgb(74, 74, 74);
+        color: var(--sliver);
     }
     .idc {
         width: 100%;

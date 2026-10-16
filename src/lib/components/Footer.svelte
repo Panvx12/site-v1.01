@@ -1,5 +1,5 @@
 <section class="footer">
-    <p>▸ © 2026 WAFFLE / PANCAKE · ALL RIGHTS RESERVED · SITE V1.01</p>
+    <p>▸ © 2026 WAFFLE / PANCAKE · ALL RIGHTS RESERVED · SITE v1.01</p>
 </section>
 
 <style>

@@ -6,14 +6,13 @@
     <a class="link" href="{item.link}">
         <div class="column">
             <div class="header">
-                <p>→</p>
+                <p class="arrow">→</p>
                 <p class="time">{item.time}</p>
                 <p class="type">{item.type}</p>
                 <p class="title">{item.title}</p>
             </div>
             <div class="end">
                 <p class="status">{item.status}</p>
-                <p>←</p>
             </div>
         </div>
     </a>
@@ -25,18 +24,21 @@
     }
     .column {
         margin: auto;
-        margin-bottom: 10px;
         padding: 5px 10px;
+        width: 80%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        background-color: aliceblue;
+        background-color: white;
+        border: 1px solid var(--sliver);
+    }
+    .column:hover {
+        background-color: aliceblue
     }
     .header {
         display: flex;
         flex-direction: row;
         align-items: center;
-        background-color: aliceblue;
         flex: 1;
         gap: 20px;
     }
@@ -50,22 +52,45 @@
         margin-left: 20px;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
-        background-color: aliceblue;
+        align-items: center;
         gap: 20px;
     }
+    .arrow {
+        color: black;
+    }
     .time {
-        color: rgb(74, 74, 74);
+        margin: 0;
+        color: var(--sliver);
     }
     .type {
+        margin: 0;
         font-weight: 700;
         color: black;
     }
     .title {
+        margin: 0;
         font-weight: 700;
         color: black;
     }
     .status {
-        color: rgb(74, 74, 74);
+        margin: 0;
+        color: var(--sliver);
+    }
+    @media (max-width: 800px) {
+        .time {
+            font-size: 0.8rem;
+        }
+        .type {
+            display: none;
+        }
+        .title {
+            font-size: 0.8rem;
+        }
+        .status {
+            display: none;
+        }
+        .header::after {
+            display: none;
+        }
     }
 </style>
