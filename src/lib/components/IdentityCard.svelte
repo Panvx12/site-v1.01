@@ -80,7 +80,8 @@
         width: fit-content;
         margin: 0 auto;
         font-size: 38px;
-        font-weight: 900;
+        font-weight: bold;
+        text-shadow: 0 0 10px  rgba(102, 103, 103, 0.8);
     }
     .idc h2 {
         display: block;
