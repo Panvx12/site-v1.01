@@ -3,14 +3,14 @@
         "time":"2026.09.20",
         "title": "dev-kit",
         "type" : "TOOL","tColor":"coral",
-        "status": "PUBLISHED",
+        "status": "UPDATING",
         "link": "https://github.com/Panvx12/dev-kit"
     },
     {
         "time":"2025.06.17",
         "title": "Web",
         "type" : "PROJECT","tColor":"aqua",
-        "status": "UPDATING",
+        "status": "PUBLISHED",
         "link": "https://panvx12.github.io/Web/Home/home.html"
     }
 ]
