@@ -9,11 +9,13 @@
     import Footer from '$lib/components/Footer.svelte';
 
     import avatar from "$lib/assets/avatar1.webp";
+    import og from "$lib/assets/OG.webp"
 </script>
 
 <main>
     <IndentityCard />
     <section class="content">
+    <img src= {og} alt="avatar">
         <h1>PROFILE</h1>
         <p class="annotation">// 個人簡介</p>
         <Profile />
