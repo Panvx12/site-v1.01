@@ -28,7 +28,7 @@
         border-top: 1px solid var(--sliver);
         border-left: 1px solid var(--sliver);
         border-right: 1px solid var(--sliver);
-        width: 80%;
+        width: 95%;
     }
     .link {
         color: inherit;
