@@ -12,8 +12,8 @@
     import { page } from '$app/state';
 
     const navItems = [
-        {name : 'POSTS', href: './posts'},
-        { name: 'PROJECTS', href: './projects' }
+        { name: 'POSTS', href: './posts', match: '/posts' },
+        { name: 'PROJECTS', href: './projects', match: '/projects' }
     ];
 </script>
 
@@ -24,7 +24,7 @@
     <ul>
         {#each navItems as item}
             <li>
-                <a href={item.href} class={page.url.pathname.endsWith(item.href) ? 'active' : ''}>
+                <a href={item.href} class={page.url.pathname.includes(item.match) ? 'active' : ''}>
                     {item.name}
                 </a>
             </li>
