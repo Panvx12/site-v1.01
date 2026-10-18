@@ -82,6 +82,12 @@
         color: var(--sliver);
     }
     @media (max-width: 800px) {
+        .header::after {
+            display: none;
+        }
+        .end {
+            display: none;
+        }
         .projects-list {
             width: 100%;
         }
