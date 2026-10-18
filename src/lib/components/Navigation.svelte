@@ -25,7 +25,7 @@
     <ul>
         {#each navItems as item}
             <li>
-                <a href={resolve(item.href)} class:active={page.url.pathname === item.href}>
+                <a href={item.href} class:active={page.url.pathname === item.href}>
                     {item.name}
                 </a>
             </li>
