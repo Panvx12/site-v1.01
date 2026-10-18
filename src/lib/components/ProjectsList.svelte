@@ -4,7 +4,7 @@
 
 <div class="projects-list">
     {#each items as item}
-        <a class="link" href="{item.link}" target="_blank">
+        <a class="link" href="{item.link}">
             <div class="column">
                 <div class="header">
                     <span class="arrow">→</span>
@@ -48,26 +48,6 @@
     .column:hover {
         background-color: aliceblue
     }
-    .header {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        flex: 1;
-        gap: 20px;
-    }
-    .header::after {
-        content: "";
-        flex: 1;
-        height: 0;
-        border-bottom: 1px dashed rgb(74, 74, 74);
-    }
-    .end {
-        margin-left: 20px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 20px;
-    }
     .time {
         margin: 0;
         color: var(--sliver);
@@ -80,19 +60,12 @@
         margin: 0;
         font-weight: 700;
     }
-    .status {
-        margin: 0;
-        color: var(--sliver);
-    }
     @media (max-width: 800px) {
         .projects-list {
             width: 100%;
         }
         .column {
             min-height: 35px;
-        }
-        .header {
-            gap: 10px;
         }
         .arrow {
             font-size: 0.5rem;
@@ -105,12 +78,6 @@
         }
         .title {
             font-size: 0.8rem;
-        }
-        .status {
-            display: none;
-        }
-        .header::after {
-            display: none;
         }
     }
 </style>

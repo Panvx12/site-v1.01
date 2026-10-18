@@ -1,10 +1,11 @@
 <script>
     import items from "$lib/posts/posts.json";
+    import { base } from '$app/paths';
 </script>
 
 <div class="posts-list">
     {#each items as item}
-        <a class="link" href="/posts/{item.slug}">
+        <a class="link" href="./posts/{item.slug}">
             <div class="column">
                 <span class="arrow">→</span>
                 <span class="time">{item.time}</span>
