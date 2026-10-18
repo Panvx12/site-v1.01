@@ -48,6 +48,24 @@
     .column:hover {
         background-color: aliceblue
     }
+    .header {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        gap: 20px;
+    }
+    .header::after {
+        content: "";
+        display: flex;
+        flex: 1;
+        height: 1px;
+        border-bottom: 1px dashed var(--sliver);
+    }
+    .end {
+        margin-left: 20px;
+        display: flex;
+        align-items: center;
+    }
     .time {
         margin: 0;
         color: var(--sliver);
@@ -59,6 +77,9 @@
     .title {
         margin: 0;
         font-weight: 700;
+    }
+    .status {
+        color: var(--sliver);
     }
     @media (max-width: 800px) {
         .projects-list {
@@ -77,6 +98,9 @@
             display: none;
         }
         .title {
+            font-size: 0.8rem;
+        }
+        .status {
             font-size: 0.8rem;
         }
     }

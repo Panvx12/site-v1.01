@@ -76,11 +76,5 @@
         .title {
             font-size: 0.8rem;
         }
-        .status {
-            display: none;
-        }
-        .header::after {
-            display: none;
-        }
     }
 </style>
