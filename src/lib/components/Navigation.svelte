@@ -13,7 +13,8 @@
     import { page } from '$app/state';
 
     const navItems = [
-        { name: 'PROJECTS', href: '/projects' },
+        {name : 'POSTS', href: '/posts'},
+        { name: 'PROJECTS', href: '/projects' }
     ];
 </script>
 
