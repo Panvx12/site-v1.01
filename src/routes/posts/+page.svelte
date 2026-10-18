@@ -10,10 +10,11 @@
 
 <style>
     h1 {
-        margin: 20px 0 0 0;
+        margin: 0;
         color: black;
         font-size: 4rem;
         font-weight: bold;
+        /* text-shadow 語法：X軸偏移 Y軸偏移 模糊半徑 陰影顏色 */
         text-shadow: 0 0 3px  rgba(102, 103, 103, 0.8);
     }
     .content {
