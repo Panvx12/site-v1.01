@@ -4,7 +4,7 @@
 
 <div class="projects-list">
     {#each items as item}
-        <a class="link" href="{item.link}">
+        <a class="link" href="{item.link}" target="_blank">
             <div class="column">
                 <div class="header">
                     <span class="arrow">→</span>
