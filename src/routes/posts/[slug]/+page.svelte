@@ -1,4 +1,5 @@
 <script>
+    import GiscusComments from '$lib/components/GiscusComments.svelte';
   /** @type {import('./$types').PageData} */
   export let data;
 </script>
@@ -11,16 +12,20 @@
         <hr />
         <svelte:component this={data.content} />
     </article>
+    <GiscusComments />
 </section>
 
 <style>
     .content {
         margin: auto;
         padding: 50px 50px 0 50px;
+        display: grid;
+        grid-template-columns: 800px 1fr;
+        gap: 20px;
         width: min(100svw,var(--maxContentWidth))
     }
     article {
-        width: 60%;
+        width: 100%;
         overflow-wrap: break-word;
     }
     :global(blockquote) {
@@ -33,8 +38,10 @@
         background-color: #f3f4f6;
     }
     @media(max-width: 1100px) {
-        article {
-            width: 100%;
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
     }
 </style>
