@@ -27,4 +27,9 @@
         color: var(--sliver);
         font-size: 1.5rem;
     }
+    @media (max-width: 1100px) {
+        h1 {
+            font-size: 2.5rem;
+        }
+    }
 </style>
