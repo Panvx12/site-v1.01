@@ -17,7 +17,7 @@
         scriptEl.setAttribute("data-reactions-enabled", "1");
         scriptEl.setAttribute("data-emit-metadata", "0");
         scriptEl.setAttribute("data-input-position", "top");
-        scriptEl.setAttribute("data-theme", "preferred_color_scheme");
+        scriptEl.setAttribute("data-theme", "light");
         scriptEl.setAttribute("data-lang", "zh-TW");
         scriptEl.setAttribute("data-loading", "lazy");
         scriptEl.crossOrigin = "anonymous";
