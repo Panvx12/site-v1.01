@@ -36,6 +36,7 @@
 <style>
     .giscus-wrapper {
         margin: 0 5px;
+        padding: 0 5px;
         width: 100%;
     }
 </style>

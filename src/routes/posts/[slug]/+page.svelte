@@ -12,21 +12,27 @@
         <hr />
         <svelte:component this={data.content} />
     </article>
-    <GiscusComments />
+    <div class="comments">
+        <GiscusComments />
+    </div>
 </section>
 
 <style>
     .content {
-        margin: auto;
-        padding: 50px 50px 0 50px;
-        display: grid;
-        grid-template-columns: 800px 1fr;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         gap: 20px;
+        margin: auto;
+        padding: 20px 20px 0 20px;
         width: min(100svw,var(--maxContentWidth))
     }
     article {
-        width: 100%;
+        width: 70%;
         overflow-wrap: break-word;
+    }
+    .comments {
+        width: 70%;
     }
     :global(blockquote) {
         margin: 1rem 0;
@@ -37,11 +43,13 @@
         color: #475063;
         background-color: #f3f4f6;
     }
-    @media(max-width: 1100px) {
-        .content {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+
+    @media (max-width: 1100px) {
+        article {
+            width: 100%;
+        }
+        .comments {
+            width: 100%;
         }
     }
 </style>
