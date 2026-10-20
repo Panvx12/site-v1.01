@@ -2,7 +2,7 @@
     {
         "title": "官網 v1.01",
         "status": "開發中",
-        "progress": "68%",
+        "progress": "74%",
         "description": "根據初代網頁問題進行修改",
         "techStack": ["SVELTE","HTML","CSS"]
     }
