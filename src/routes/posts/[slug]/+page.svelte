@@ -28,10 +28,12 @@
         width: min(100svw,var(--maxContentWidth))
     }
     article {
+        padding: 10px 10px 0 10px;
         width: 70%;
         overflow-wrap: break-word;
     }
     .comments {
+        padding: 10px 10px 0 10px;
         width: 70%;
     }
     :global(blockquote) {
