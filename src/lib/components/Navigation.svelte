@@ -39,7 +39,7 @@
         border-bottom: 1px solid var(--BorderColorW);
         
         width: min(var(--initContentWidth), var(--maxContentWidth));
-        height: 70px;
+        height: 60px;
 
         display: flex;
         justify-content: space-between;
