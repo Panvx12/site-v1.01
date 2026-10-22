@@ -59,8 +59,8 @@
         left: 0;
         width: 10px;
         height: 10px;
-        border-left: 1px solid blue;
-        border-top: 1px solid blue;
+        border-left: 2px solid blue;
+        border-top: 2px solid blue;
     }
     .right-up-decoration {
         position: absolute;
@@ -68,8 +68,8 @@
         right: 0;
         width: 10px;
         height: 10px;
-        border-right: 1px solid blue;
-        border-top: 1px solid blue;
+        border-right: 2px solid blue;
+        border-top: 2px solid blue;
     }
     .left-down-decoration {
         position: absolute;
@@ -77,8 +77,8 @@
         left: 0;
         width: 10px;
         height: 10px;
-        border-left: 1px solid blue;
-        border-bottom: 1px solid blue;
+        border-left: 2px solid blue;
+        border-bottom: 2px solid blue;
     }
     .right-down-decoration {
         position: absolute;
@@ -86,8 +86,8 @@
         right: 0;
         width: 10px;
         height: 10px;
-        border-right: 1px solid blue;
-        border-bottom: 1px solid blue;
+        border-right: 2px solid blue;
+        border-bottom: 2px solid blue;
     }
 
 
