@@ -98,6 +98,7 @@
     }
     .background-img {
         width: 100%;
+        height: auto;
     }
     .content {
         width: 50%;
