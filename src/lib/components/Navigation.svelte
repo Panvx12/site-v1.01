@@ -67,7 +67,7 @@
         gap: 1.5rem;
 
         list-style: none;
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
     .navigation li {
         cursor: pointer;
@@ -97,7 +97,7 @@
         }
         .navigation ul {
             gap: 1rem;
-            font-size: 0.7rem;
+            font-size: 1rem;
         }
     }
 </style>
