@@ -5,6 +5,11 @@
 
 <section class="profile">
     <div class="self">
+        <div class="left-up-decoration"></div>
+        <div class="right-up-decoration"></div>
+        <div class="left-down-decoration"></div>
+        <div class="right-down-decoration"></div>
+
         <img class="avatar" src= {avatar} alt="avatar" />
         <h1>鬆餅</h1>
         <p class="annotation">WAFFLE / PANCAKE</p>
@@ -20,6 +25,12 @@
     </div>
     <div class="other">
         <div class="contact">
+
+            <div class="left-up-decoration"></div>
+            <div class="right-up-decoration"></div>
+            <div class="left-down-decoration"></div>
+            <div class="right-down-decoration"></div>
+
             <h1>CONTACT</h1>
             {#each Contact as contact}
                 <div class="contact-item">
@@ -29,6 +40,11 @@
             {/each}
         </div>
         <div class="code-box">
+            <div class="left-up-decoration"></div>
+            <div class="right-up-decoration"></div>
+            <div class="left-down-decoration"></div>
+            <div class="right-down-decoration"></div>
+
             <p>#include &lt;stdio.h&gt;</p>
             <p>typedef struct &lbrace;</p>
             <p>&nbsp&nbsp&nbsp&nbsp;char name[10];</p>
@@ -44,6 +60,43 @@
 </section>
 
 <style>
+    .left-up-decoration {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        border-left: 1px solid blue;
+        border-top: 1px solid blue;
+    }
+    .right-up-decoration {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 10px;
+        height: 10px;
+        border-right: 1px solid blue;
+        border-top: 1px solid blue;
+    }
+    .left-down-decoration {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        border-left: 1px solid blue;
+        border-bottom: 1px solid blue;
+    }
+    .right-down-decoration {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 10px;
+        height: 10px;
+        border-right: 1px solid blue;
+        border-bottom: 1px solid blue;
+    }
+
     .profile {
         margin: auto;
         display: grid;
@@ -56,6 +109,11 @@
         margin: 0 0 5px 0;
         color: var(--sliver);
         font-size: 1rem;
+    }
+    .self {
+        position: relative;
+        padding: 20px;
+        overflow-wrap: break-word;
     }
     .self h1 {
         margin: 0;
@@ -84,12 +142,18 @@
         gap: 20px;
     }
     .code-box {
+        position: relative;
         padding: 20px;
         background: linear-gradient(135deg, #f4f6fb, #e5ebf6);
         font-family: 'Fira Code', 'Consolas', monospace;
     }
     .code-box p {
         margin: 0;
+    }
+    .contact {
+        position: relative;
+        padding: 20px;
+        overflow-wrap: break-word;
     }
     .contact h1 {
         margin: 0 0 20px 0;

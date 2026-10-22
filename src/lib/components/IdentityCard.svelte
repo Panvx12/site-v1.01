@@ -12,6 +12,11 @@
     </picture>
     <div class="content">
         <div class="idc">
+            <div class="left-up-decoration"></div>
+            <div class="right-up-decoration"></div>
+            <div class="left-down-decoration"></div>
+            <div class="right-down-decoration"></div>
+
             <p class="annotation">// IDENTITY CARD</p>
             <h1>鬆餅</h1>
             <h2>WAFFLE / PANCAKE</h2>
@@ -24,10 +29,20 @@
         </div >
         <div>
             <div class="brief">
+                <div class="left-up-decoration"></div>
+                <div class="right-up-decoration"></div>
+                <div class="left-down-decoration"></div>
+                <div class="right-down-decoration"></div>
+
                 <p class="annotation">// BRIEF</p>
                 <p style="font-size: 14px; margin: 0;">A university student from Taiwan, focused on programming and curious about new technologies.</p>
             </div>
             <div class="skills">
+                <div class="left-up-decoration"></div>
+                <div class="right-up-decoration"></div>
+                <div class="left-down-decoration"></div>
+                <div class="right-down-decoration"></div>
+
                 <p class="annotation">// SKILLS</p>
                 {#each skills as skill}
                     <span class="skill-box">{skill}</span>
@@ -38,6 +53,44 @@
 </section>
 
 <style>
+    .left-up-decoration {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        border-left: 1px solid blue;
+        border-top: 1px solid blue;
+    }
+    .right-up-decoration {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 10px;
+        height: 10px;
+        border-right: 1px solid blue;
+        border-top: 1px solid blue;
+    }
+    .left-down-decoration {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        border-left: 1px solid blue;
+        border-bottom: 1px solid blue;
+    }
+    .right-down-decoration {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 10px;
+        height: 10px;
+        border-right: 1px solid blue;
+        border-bottom: 1px solid blue;
+    }
+
+
     .indentity-card {
         margin: auto;
         position: relative;
@@ -61,6 +114,7 @@
         color: var(--sliver);
     }
     .idc {
+        position: relative;
         width: 100%;
         height: 100%;
         padding: 10px;
@@ -116,11 +170,13 @@
         border-bottom: 2px dashed rgba(138, 138, 138, 0.3);
     }
     .brief {
+        position: relative;
         margin-bottom: 20px;
         padding: 10px;
         background: linear-gradient(135deg, #ffffffc7, #f1f4fbb3);
     }
     .skills {
+        position: relative;
         padding: 10px;
         background: linear-gradient(135deg, #ffffffc7, #f1f4fbb3);
     }
