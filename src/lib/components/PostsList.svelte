@@ -41,6 +41,7 @@
         gap: 20px;
         background-color: white;
         border-bottom: 1px solid var(--sliver);
+        overflow-wrap: break-word;
     }
     .column:hover {
         background-color: aliceblue
