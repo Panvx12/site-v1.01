@@ -2,6 +2,10 @@
     import PostsList from "$lib/components/PostsList.svelte";
 </script>
 
+<svelte:head>
+    <title>鬆餅官方網站 | POSTS</title>
+</svelte:head>
+
 <section class="content">
     <h1>POSTS</h1>
     <p class="annotation">// 各類文章</p>
