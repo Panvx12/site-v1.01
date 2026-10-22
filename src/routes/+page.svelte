@@ -15,7 +15,7 @@
     <IndentityCard />
     <section class="content">
         <h1>PROFILE</h1>
-        <p class="annotation">// 個人簡介</p>
+        <p class="annotation">// 個人檔案</p>
         <Profile />
 
         <h1>AVATAR</h1>
