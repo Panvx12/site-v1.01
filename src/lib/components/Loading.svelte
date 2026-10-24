@@ -1,5 +1,5 @@
 <script>
-    import Logo from '$lib/assets/logo1.webp'
+    import Logo from '#lib/assets/logo1.webp'
 </script>
 
 <section class="loading">

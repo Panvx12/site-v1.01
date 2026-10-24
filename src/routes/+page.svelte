@@ -3,12 +3,12 @@
 </svelte:head>
 
 <script>
-    import IndentityCard from '$lib/components/IdentityCard.svelte';
-    import Profile from '$lib/components/Profile.svelte';
-    import Progress from '$lib/components/Progress.svelte';
-    import Footer from '$lib/components/Footer.svelte';
+    import IndentityCard from '#lib/components/IdentityCard.svelte';
+    import Profile from '#lib/components/Profile.svelte';
+    import Progress from '#lib/components/Progress.svelte';
+    import Footer from '#lib/components/Footer.svelte';
 
-    import avatar from "$lib/assets/avatar1.webp";
+    import avatar from "#lib/assets/avatar1.webp";
 </script>
 
 <main>

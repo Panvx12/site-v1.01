@@ -1,8 +1,8 @@
 <script>
-    import identityCard from "$lib/dataset/identityCard.json";
-    import skills from "$lib/dataset/skills.json";
-    import cover0 from "$lib/assets/cover0.webp";
-    import cover1 from "$lib/assets/cover1.webp";
+    import identityCard from "#lib/dataset/identityCard.json";
+    import skills from "#lib/dataset/skills.json";
+    import cover0 from "#lib/assets/cover0.webp";
+    import cover1 from "#lib/assets/cover1.webp";
 </script>
 
 <section class="indentity-card">

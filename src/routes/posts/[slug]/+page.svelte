@@ -1,16 +1,17 @@
 <script>
-    import GiscusComments from '$lib/components/GiscusComments.svelte';
-  /** @type {import('./$types').PageData} */
-  export let data;
+    import GiscusComments from '#lib/components/GiscusComments.svelte';
+    /** @type {import('./$types').PageProps} */
+    let { data } = $props();
+    let ContentComponent = $derived(data.content);
 </script>
 
 <section class="content">
     <article>
-        {#if data.meta.title}
-            <h1>{data.meta.title}</h1>
+        {#if ContentComponent}
+            <ContentComponent />
+        {:else}
+            <p>找不到文章內容</p>
         {/if}
-        <hr />
-        <svelte:component this={data.content} />
     </article>
     <div class="comments">
         <GiscusComments />

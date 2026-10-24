@@ -1,5 +1,5 @@
 <script>
-    import PostsList from "$lib/components/PostsList.svelte";
+    import PostsList from "#lib/components/PostsList.svelte";
 </script>
 
 <svelte:head>

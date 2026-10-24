@@ -1,8 +1,8 @@
 <script>
-	import Loading from '$lib/components/Loading.svelte';
-    import  Navigation  from '$lib/components/Navigation.svelte';
-	import Marquee from '$lib/components/Marquee.svelte';
-	import icon from '$lib/assets/icon.webp';
+	import Loading from '#lib/components/Loading.svelte';
+    import  Navigation  from '#lib/components/Navigation.svelte';
+	import Marquee from '#lib/components/Marquee.svelte';
+	import icon from '#lib/assets/icon.webp';
 	
 	import { afterNavigate } from '$app/navigation';
 

@@ -1,5 +1,5 @@
 <script>
-    import items from "$lib/dataset/in-progress.json";
+    import items from "#lib/dataset/in-progress.json";
 </script>
 
 <section>

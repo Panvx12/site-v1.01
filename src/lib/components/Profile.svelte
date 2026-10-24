@@ -1,6 +1,6 @@
 <script>
-    import Contact from "$lib/dataset/contact.json";
-    import avatar from "$lib/assets/avatar.webp";
+    import Contact from "#lib/dataset/contact.json";
+    import avatar from "#lib/assets/avatar.webp";
 </script>
 
 <section class="profile">

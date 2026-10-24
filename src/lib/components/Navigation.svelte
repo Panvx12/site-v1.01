@@ -7,7 +7,7 @@
 -->
 
 <script lang="ts">
-    import logo from "$lib/assets/logo.webp";
+    import logo from "#lib/assets/logo.webp";
     import { resolve } from '$app/paths';
     import { page } from '$app/state';
 

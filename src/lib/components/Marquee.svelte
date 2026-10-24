@@ -6,7 +6,7 @@
 -->
 
 <script>
-	import items from '$lib/dataset/marquee.json';
+	import items from '#lib/dataset/marquee.json';
 </script>
 
 <section class="marquee">
