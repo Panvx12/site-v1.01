@@ -93,7 +93,7 @@
 
         background-image: url(../../../src/lib/assets/cover0.webp);
         background-size: cover;
-        background-position: center top;
+        background-position: left top;
         background-repeat: no-repeat;
     }
 
@@ -197,6 +197,7 @@
         .banner {
             height: 900px;
             background-image: url(../../../src/lib/assets/cover1.webp);
+            background-position: center top;
         }
 
         .content {
