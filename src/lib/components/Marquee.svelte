@@ -25,9 +25,9 @@
         height: 30px;
         display: flex;
         align-items: center;
-        border-top: 1px solid var(--BorderColorW);
-        border-bottom: 1px solid var(--BorderColorW);
-        background-color: rgb(53, 53, 53);
+        border-width: 0;
+        background-color: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
         overflow: hidden;
         white-space: nowrap;
     }
@@ -35,10 +35,6 @@
         display: inline-flex;
         transform: translateX(100%);
         animation: seamless-marquee 60s linear infinite;
-    }
-    .marquee-track:hover {
-        cursor: pointer;
-        animation-play-state: paused;
     }
     .content {
         height: 100%;
@@ -48,7 +44,7 @@
         font-size: 1rem;
     }
     .marquee .content span {
-        color: rgb(220, 220, 220);
+        color: var(--sliver);
     }
     @keyframes seamless-marquee {
         0% {
@@ -57,9 +53,5 @@
         100% {
             transform: translateX(-100%);
         }
-    }
-
-    @media (max-width: 768px) {
-        
     }
 </style>

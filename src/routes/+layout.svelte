@@ -37,7 +37,6 @@
 	.marqueeCombineNav {
 		margin: auto;
 		width: min(var(--initContentWidth),var(--maxContentWidth));
-        position: sticky;
         top: 0;
         z-index: var(--zLargestIndex);
 	}

@@ -7,7 +7,7 @@
 -->
 
 <script lang="ts">
-    import logo from "#lib/assets/logo.webp";
+    import logo from "#lib/assets/logo1.webp";
     import { resolve } from '$app/paths';
     import { page } from '$app/state';
 
@@ -34,17 +34,17 @@
 <style>
     .navigation {
         padding: 0 10svw;
-        box-sizing: border-box;
-        border-bottom: 1px solid var(--BorderColorW);
-        
+        border-top: 1px solid #e5e7eb;
+        border-bottom: 1px solid #e5e7eb;
         width: min(var(--initContentWidth), var(--maxContentWidth));
-        height: 60px;
+        height: 50px;
 
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        background-color: #1e1e1e;
+        background-color: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
     }
     .logoHref{
         height: 100%;
@@ -59,7 +59,7 @@
     .navigation ul {
         margin: 0;
         padding: 0;
-        color: white;
+        color: black;
 
         display: flex;
         justify-content:flex-end;
