@@ -1,15 +1,9 @@
 <script>
     import identityCard from "#lib/dataset/identityCard.json";
     import skills from "#lib/dataset/skills.json";
-    import cover0 from "#lib/assets/cover0.webp";
-    import cover1 from "#lib/assets/cover1.webp";
 </script>
 
-<section class="indentity-card">
-    <picture>
-        <source media="(max-width: 1100px)" srcset= {cover1}>
-        <img class=background-img src={cover0} alt="background">
-    </picture>
+<section class="banner">
     <div class="content">
         <div class="idc">
             <div class="left-up-decoration"></div>
@@ -91,15 +85,18 @@
     }
 
 
-    .indentity-card {
+    .banner {
         margin: auto;
         position: relative;
-        width: min(100svw,var(--maxContentWidth))
+        width: min(100svw,var(--maxContentWidth));
+        height: 600px;
+
+        background-image: url(../../../src/lib/assets/cover0.webp);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
-    .background-img {
-        width: 100%;
-        height: auto;
-    }
+
     .content {
         width: 50%;
         position: absolute;
@@ -197,6 +194,11 @@
     }
 
     @media (max-width: 1100px) {
+        .banner {
+            height: 1800px;
+            background-image: url(../../../src/lib/assets/cover1.webp);
+        }
+
         .content {
             grid-template-columns: 1fr;
             grid-template-rows: repeat(2, 1fr);

@@ -3,7 +3,7 @@
 </svelte:head>
 
 <script>
-    import IndentityCard from '#lib/components/IdentityCard.svelte';
+    import Banner from '#lib/components/Banner.svelte';
     import Profile from '#lib/components/Profile.svelte';
     import Progress from '#lib/components/Progress.svelte';
     import Footer from '#lib/components/Footer.svelte';
@@ -12,7 +12,7 @@
 </script>
 
 <main>
-    <IndentityCard />
+    <Banner />
     <section class="content">
         <h1>PROFILE</h1>
         <p class="annotation">// 個人檔案</p>
