@@ -89,11 +89,11 @@
         margin: auto;
         position: relative;
         width: min(100svw,var(--maxContentWidth));
-        height: 600px;
+        height: 700px;
 
         background-image: url(../../../src/lib/assets/cover0.webp);
         background-size: cover;
-        background-position: center;
+        background-position: center top;
         background-repeat: no-repeat;
     }
 
