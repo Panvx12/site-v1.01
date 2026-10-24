@@ -195,7 +195,7 @@
 
     @media (max-width: 1100px) {
         .banner {
-            height: 1800px;
+            height: 900px;
             background-image: url(../../../src/lib/assets/cover1.webp);
         }
 
@@ -203,7 +203,7 @@
             grid-template-columns: 1fr;
             grid-template-rows: repeat(2, 1fr);
             width: 80%;
-            top: 5%;
+            top: 20%;
             left: 10%;
         }
         .idc {
