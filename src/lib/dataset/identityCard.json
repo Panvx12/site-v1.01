@@ -1,0 +1,10 @@
+[
+    { "label": "ROLE", "value": "STUDENT" },
+    { "label": "HIGH SCHOOL", "value": "HCHS" },
+    { "label": "UNIVERSITY", "value": "NFU" },
+    { "label": "MAJOR", "value": "EE" },
+    { "label": "BIRTH", "value": "06.25" },
+    { "label": "ORIGIN", "value": "TAIWAN" },
+    { "label": "LANGUAGE", "value": "ZH-TW · EN" },
+    { "label": "CONTENT", "value": "CODE · PROJECTS" }
+]
