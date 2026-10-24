@@ -18,7 +18,7 @@ export default defineConfig({
 			extensions: ['.svelte', '.svx', '.md'],
 
 			paths: {
-                base: process.env.NODE_ENV === 'production' ? '/test' : ''
+                base: process.env.NODE_ENV === 'production' ? '/site-v1.01' : ''
             }
 		})
 	],
