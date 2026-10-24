@@ -26,8 +26,7 @@
         display: flex;
         align-items: center;
         border-width: 0;
-        background-color: rgba(255, 255, 255, 0.9);
-        backdrop-filter: blur(10px);
+        background: linear-gradient(180deg, #fffffff0, #f8fafec7);
         overflow: hidden;
         white-space: nowrap;
     }
@@ -41,7 +40,8 @@
         display: flex;
         align-items: center;
         gap: 2rem;
-        font-size: 1rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.15em;
     }
     .marquee .content span {
         color: var(--sliver);

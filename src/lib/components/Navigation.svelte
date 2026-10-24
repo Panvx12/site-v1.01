@@ -42,9 +42,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-
-        background-color: rgba(255, 255, 255, 0.9);
-        backdrop-filter: blur(10px);
+        background: linear-gradient(180deg, #fffffff0, #f8fafec7);
     }
     .logoHref{
         height: 100%;
