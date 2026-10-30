@@ -1,81 +1,185 @@
-<script>
-    import items from "#lib/posts/posts.json";
-    import { resolve } from '$app/paths';
+<script lang="ts">
+    // 定義文章資料的型別介面
+    interface PostFile {
+        metadata?: {
+            title?: string;
+            date?: string;
+        };
+    }
+    interface PostItem {
+        slug: string;
+        pathSegments: string[];
+        title: string;
+        date: string;
+    }
+
+    // 1. 抓取 src/posts 底下的所有 .md 檔案
+    const postFiles = import.meta.glob('#lib/posts/**/*.md', { eager: true }) as Record<string, PostFile>;
+
+    // 2. 取得並解析文章資料（使用 split('posts/') 確保絕對從 posts 內部開始）
+    const posts: PostItem[] = Object.entries(postFiles).map(([path, file]) => {
+        // 例如 path 是 "/src/posts/tech/js.md" 或 "src/posts/tech/js.md"
+        // 用 split('posts/') 抓取後面「tech/js.md」這段
+        const relativePath = path.split('posts/')[1] || '';
+        const slug = relativePath.replace('.md', ''); // 變成 "tech/js"
+        const pathSegments = slug.split('/'); // 變成 ['tech', 'js']
+        
+        return {
+            slug,
+            pathSegments,
+            title: file.metadata?.title || pathSegments[pathSegments.length - 1],
+            date: file.metadata?.date || ''
+        };
+    });
+
+    // 3. 建立多層資料夾樹狀結構的工具函式
+    function getFileTree(postList: PostItem[]) {
+        const tree: Record<string, any> = {};
+        postList.forEach(post => {
+            let current = tree;
+            post.pathSegments.forEach((part, index) => {
+                const isFile = index === post.pathSegments.length - 1;
+                if (isFile) {
+                    current[part] = { type: 'file', post };
+                } else {
+                    current[part] = current[part] || { type: 'folder', children: {} };
+                    current = current[part].children;
+                }
+            });
+        });
+        return tree;
+    }
+
+    const fileTree = getFileTree(posts);
+
+    // 控制資料夾開合狀態的物件（Svelte 5 狀態）
+    let openFolders = $state<Record<string, boolean>>({});
+
+    function toggleFolder(path: string) {
+        openFolders[path] = !openFolders[path];
+    }
 </script>
 
-<div class="posts-list">
-    {#each items as item}
-        <a class="link" href={resolve('/posts/[slug]', { slug: item.slug })}>
-            <div class="column">
-                <span class="arrow">→</span>
-                <span class="time">{item.time}</span>
-                <span class="type" style="color:{item.tColor};">{item.type}</span>
-                <span class="title">{item.title}</span>
-            </div>
-        </a>
-    {/each}
+<!-- 遞迴顯示資料夾與檔案的內部組件 -->
+{#snippet renderTree(subTree: Record<string, any>, currentPath = '')}
+    <ul class="file-tree-list">
+        {#each Object.entries(subTree) as [name, node]}
+            {@const fullPath = currentPath ? `${currentPath}/${name}` : name}
+            
+            <li class="tree-item">
+                {#if node.type === 'folder'}
+                    <!-- 資料夾項目 -->
+                    <button type="button" class="folder-header" onclick={() => toggleFolder(fullPath)}>
+                        <span class="icon">{openFolders[fullPath] ? '📂' : '📁'}</span>
+                        <span class="name">{name}</span>
+                        <span class="arrow">{openFolders[fullPath] ? '▼' : '▶'}</span>
+                    </button>
+                    
+                    {#if openFolders[fullPath]}
+                        <div class="folder-content">
+                            {@render renderTree(node.children, fullPath)}
+                        </div>
+                    {/if}
+                {:else}
+                    <!-- 檔案（文章）項目 -->
+                    <a href="/posts/{node.post.slug}" class="file-link">
+                        <span class="icon">📄</span>
+                        <span class="name">{node.post.title}</span>
+                        {#if node.post.date}
+                            <span class="date">{node.post.date}</span>
+                        {/if}
+                    </a>
+                {/if}
+            </li>
+        {/each}
+    </ul>
+{/snippet}
+
+<div class="posts-container">
+    <div class="explorer-sidebar">
+        {@render renderTree(fileTree)}
+    </div>
 </div>
 
 <style>
-    .posts-list {
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        border-top: 1px solid var(--sliver);
-        border-left: 1px solid var(--sliver);
-        border-right: 1px solid var(--sliver);
-        width: 95%;
+    .posts-container {
+        width: 80%;
+        margin: 10px auto;
+        font-family: system-ui, -apple-system, sans-serif;
     }
-    .link {
-        color: inherit;
-        text-decoration: none;
+
+    .explorer-sidebar {
+        background: #f8f9fa;
+        border: 1px solid #e1e4e8;
+        border-radius: 8px;
+        padding: 10px;
     }
-    .column {
-        min-height: 50px;
-        margin: auto;
-        padding: 5px 10px;
-        width: 100%;
+
+    .file-tree-list {
+        list-style: none;
+        padding-left: 15px;
+        margin: 0.2rem 0;
+    }
+
+    /*針對第一層 file-tree-list 不縮排**/
+    .explorer-sidebar > .file-tree-list {
+        padding-left: 0;
+    }
+
+    .tree-item {
+        margin: 4px 0;
+    }
+
+    .folder-header {
         display: flex;
-        flex-direction: row;
         align-items: center;
-        gap: 20px;
-        background-color: white;
-        border-bottom: 1px solid var(--sliver);
-        overflow-wrap: break-word;
+        width: 100%;
+        background: none;
+        border: none;
+        font: inherit;
+        text-align: left;
+        gap: 6px;
+        cursor: pointer;
+        padding: 6px 8px;
+        border-radius: 4px;
+        user-select: none;
+        font-weight: 500;
+        color: #24292e;
     }
-    .column:hover {
-        background-color: aliceblue
+
+    .folder-header:hover {
+        background: #e1e4e8;
     }
-    .time {
-        margin: 0;
-        color: var(--sliver);
+
+    .arrow {
+        font-size: 0.7rem;
+        margin-left: auto;
     }
-    .type {
-        margin: 0;
-        font-weight: 700;
+
+    .file-link {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 8px;
+        border-radius: 4px;
+        color: #0366d6;
+        text-decoration: none;
+        font-size: 0.95rem;
     }
-    .title {
-        margin: 0;
-        font-weight: 700;
+
+    .file-link:hover {
+        background: #f1f8ff;
+        text-decoration: underline;
     }
-    @media (max-width: 800px) {
-        .posts-list {
+
+    .date {
+        margin-left: auto;
+        font-size: 0.8rem;
+        color: #6a737d;
+    }
+    @media(max-width: 1100px) {
+        .posts-container {
             width: 100%;
-        }
-        .column {
-            min-height: 35px;
-        }
-        .arrow {
-            font-size: 0.5rem;
-        }
-        .time {
-            font-size: 0.8rem;
-        }
-        .type {
-            display: none;
-        }
-        .title {
-            font-size: 0.8rem;
         }
     }
 </style>

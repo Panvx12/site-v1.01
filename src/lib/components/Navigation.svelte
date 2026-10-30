@@ -43,6 +43,9 @@
         justify-content: space-between;
         align-items: center;
         background: linear-gradient(180deg, #fffffff0, #f8fafec7);
+        backdrop-filter: blur(15px);
+        overflow-wrap: break-word;
+        white-space: nowrap;
     }
     .logoHref{
         height: 100%;

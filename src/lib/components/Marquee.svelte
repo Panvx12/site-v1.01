@@ -27,7 +27,8 @@
         align-items: center;
         border-width: 0;
         background: linear-gradient(180deg, #fffffff0, #f8fafec7);
-        overflow: hidden;
+        backdrop-filter: blur(15px);
+        overflow-wrap: break-word;
         white-space: nowrap;
     }
     .marquee-track {

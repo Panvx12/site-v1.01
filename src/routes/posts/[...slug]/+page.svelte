@@ -7,6 +7,8 @@
 
 <section class="content">
     <article>
+        <h1>{data.metadata?.title || '未命名文章'}</h1>
+        <hr>
         {#if ContentComponent}
             <ContentComponent />
         {:else}
@@ -19,23 +21,31 @@
 </section>
 
 <style>
+    h1 {
+        width: fit-content;
+        margin: auto;
+        overflow-wrap: break-word;
+        white-space: nowrap;
+        font-weight: 700;
+        font-size: 1.5rem;
+    }
     .content {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 20px;
         margin: auto;
-        padding: 20px 20px 0 20px;
+        padding: 10px 20px 0 20px;
         width: min(100svw,var(--maxContentWidth))
     }
     article {
         padding: 10px 10px 0 10px;
-        width: 70%;
+        width: 50%;
         overflow-wrap: break-word;
     }
     .comments {
         padding: 10px 10px 0 10px;
-        width: 70%;
+        width: 50%;
     }
     :global(blockquote) {
         margin: 1rem 0;
