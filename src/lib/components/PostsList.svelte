@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { resolve } from '$app/paths';
+
     // 定義文章資料的型別介面
     interface PostFile {
         metadata?: {
@@ -82,7 +84,7 @@
                     {/if}
                 {:else}
                     <!-- 檔案（文章）項目 -->
-                    <a href="/posts/{node.post.slug}" class="file-link">
+                    <a href={resolve('/posts/[...slug]', { slug: node.post.slug })} class="file-link">
                         <span class="icon">📄</span>
                         <span class="name">{node.post.title}</span>
                         {#if node.post.date}
