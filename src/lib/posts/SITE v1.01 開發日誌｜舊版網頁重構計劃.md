@@ -33,7 +33,7 @@ tags: ["Svelte", "網頁開發","開發日誌"]
 
 ### 四、AI 輔助聲明
 
-本次網頁有用 AI 來輔助開發。ChatGPT 根據提示詞創作虛擬角色並建立母版，無投餵他人畫作資料。Strikingly AI 負責網頁 Logo 設計。Gemini 用於協助實現不懂或遺忘的語法，再透過手動調整，提升製作效率。
+本次網頁有用 AI 來輔助開發。ChatGPT 根據提示詞創作虛擬角色並建立母版。Strikingly AI 負責網頁 Logo 設計。Gemini 用於協助實現不懂或遺忘的語法，再透過手動調整，提升製作效率。
 
 > ChatGPT 👉 <https://chatgpt.com><br>
 > Strikingly 官網 👉 <https://tw.strikingly.com><br>
