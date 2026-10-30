@@ -89,7 +89,7 @@
         margin: auto;
         position: relative;
         width: min(100svw,var(--maxContentWidth));
-        height: 700px;
+        height: 560px;
 
         background-image: url(../../../src/lib/assets/cover0.webp);
         background-size: cover;
@@ -101,7 +101,7 @@
         width: 50%;
         position: absolute;
         top: 12%;
-        left: 40%;
+        left: 47%;
         display: grid;
         grid-template-columns: 280px 240px 1fr;
         grid-template-rows: 1fr;
