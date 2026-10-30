@@ -33,7 +33,7 @@
 
 <style>
     .navigation {
-        padding: 0 10svw;
+        padding: 0 130px;
         border-top: 1px solid #e5e7eb;
         border-bottom: 1px solid #e5e7eb;
         width: min(var(--initContentWidth), var(--maxContentWidth));
@@ -93,6 +93,7 @@
 
     @media (max-width: 768px) {
         .navigation {
+            padding: 0 30px;
             height: 50px;
         }
         .navigation ul {
