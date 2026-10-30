@@ -24,10 +24,9 @@
     h1 {
         width: fit-content;
         margin: auto;
-        overflow-wrap: break-word;
-        white-space: nowrap;
         font-weight: 700;
         font-size: 1.5rem;
+        overflow-wrap: break-word;
     }
     .content {
         display: flex;
