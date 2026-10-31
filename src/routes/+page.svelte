@@ -39,7 +39,7 @@
     }
     .content {
         margin: auto;
-        padding: 50px 50px 0 50px;
+        padding: 0 50px;
         width: min(100svw,var(--maxContentWidth))
     }
     .annotation {

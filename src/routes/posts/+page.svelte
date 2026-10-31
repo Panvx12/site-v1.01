@@ -14,7 +14,7 @@
 
 <style>
     h1 {
-        margin: 0;
+        margin: 20px 0 0 0;
         color: black;
         font-size: 4rem;
         font-weight: bold;
@@ -22,7 +22,7 @@
         text-shadow: 0 0 3px  rgba(102, 103, 103, 0.8);
     }
     .content {
-        padding: 50px 50px 0 50px;
+        padding: 0 50px;
         margin: auto;
         width: min(var(--initContentWidth),var(--maxContentWidth));
     }
