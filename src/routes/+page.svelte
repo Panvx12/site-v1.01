@@ -44,7 +44,7 @@
     }
     .annotation {
         margin: 0 0 20px 0;
-        color: var(--sliver);
+        color: var(--silver);
         font-size: 1.5rem;
     }
     .avatar {

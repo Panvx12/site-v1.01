@@ -1,11 +1,11 @@
 <script lang="ts">
     import { resolve } from '$app/paths';
 
-    // 定義文章資料的型別介面
     interface PostFile {
         metadata?: {
             title?: string;
             date?: string;
+            tags?:string[];
         };
     }
     interface PostItem {
@@ -13,28 +13,26 @@
         pathSegments: string[];
         title: string;
         date: string;
+        tags: string[];
     }
 
-    // 1. 抓取 src/posts 底下的所有 .md 檔案
-    const postFiles = import.meta.glob('#lib/posts/**/*.md', { eager: true }) as Record<string, PostFile>;
 
-    // 2. 取得並解析文章資料（使用 split('posts/') 確保絕對從 posts 內部開始）
+    const postFiles = import.meta.glob('#lib/posts/**/*.md', { eager: true }) as Record<string, PostFile>;
     const posts: PostItem[] = Object.entries(postFiles).map(([path, file]) => {
         // 例如 path 是 "/src/posts/tech/js.md" 或 "src/posts/tech/js.md"
         // 用 split('posts/') 抓取後面「tech/js.md」這段
         const relativePath = path.split('posts/')[1] || '';
         const slug = relativePath.replace('.md', ''); // 變成 "tech/js"
-        const pathSegments = slug.split('/'); // 變成 ['tech', 'js']
-        
+        const pathSegments = slug.split('/'); // 變成 ['tech', 'js']   
         return {
             slug,
             pathSegments,
             title: file.metadata?.title || pathSegments[pathSegments.length - 1],
-            date: file.metadata?.date || ''
+            date: file.metadata?.date || '',
+            tags: file.metadata?.tags || [],
         };
     });
 
-    // 3. 建立多層資料夾樹狀結構的工具函式
     function getFileTree(postList: PostItem[]) {
         const tree: Record<string, any> = {};
         postList.forEach(post => {
@@ -52,9 +50,17 @@
         return tree;
     }
 
-    const fileTree = getFileTree(posts);
 
-    // 控制資料夾開合狀態的物件（Svelte 5 狀態）
+    const allTags = $derived(
+        Array.from(new Set(posts.flatMap(post => post.tags)))
+    );
+    let selectedTag = $state<string | null>(null);
+    let filteredPosts = $derived(
+        selectedTag ? posts.filter(post => post.tags.includes(selectedTag as string)) : posts
+    );
+    let fileTree = $derived(getFileTree(filteredPosts));
+
+
     let openFolders = $state<Record<string, boolean>>({});
 
     function toggleFolder(path: string) {
@@ -97,26 +103,66 @@
     </ul>
 {/snippet}
 
-<div class="posts-container">
+<section class="posts-container">
     <div class="explorer-sidebar">
         {@render renderTree(fileTree)}
     </div>
-</div>
+    <div>
+        <button 
+            class="tag-btn" 
+            class:active={selectedTag === null} 
+            onclick={() => selectedTag = null}
+        >
+            ALL ({posts.length})
+        </button>
+        {#each allTags as tag}
+            <button 
+                class="tag-btn" 
+                class:active={selectedTag === tag} 
+                onclick={() => selectedTag = tag}
+            >
+                {tag}
+            </button>
+        {/each}
+    </div>
+</section>
 
 <style>
     .posts-container {
-        width: 80%;
+        width: 100%;
         margin: 10px auto;
         font-family: system-ui, -apple-system, sans-serif;
+        display: grid;
+        grid-template-columns: 70% 30%;
+        gap: 20px;
+    }
+
+    .tag-btn {
+        border: none;
+        background: none;
+        padding: 0 5px;
+        margin: 0 0 10px 10px;
+        font: inherit;
+        font-size: 0.9rem;
+        color: var(--silver);
+        cursor: pointer;
+        text-decoration: none;
+        display: inline;
+    }
+    .tag-btn:hover {
+        color: black;
+    }
+    .tag-btn.active {
+        background: none;
+        text-decoration: underline;
     }
 
     .explorer-sidebar {
+        height: fit-content;
         background: #f8f9fa;
         border: 1px solid #e1e4e8;
-        border-radius: 8px;
         padding: 10px;
     }
-
     .file-tree-list {
         list-style: none;
         padding-left: 15px;
@@ -182,6 +228,8 @@
     @media(max-width: 1100px) {
         .posts-container {
             width: 100%;
+            grid-template-columns: none;
+
         }
     }
 </style>

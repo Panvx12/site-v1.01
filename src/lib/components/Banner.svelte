@@ -109,7 +109,7 @@
     }
     .annotation {
         margin: 5px 0;
-        color: var(--sliver);
+        color: var(--silver);
     }
     .idc {
         position: relative;

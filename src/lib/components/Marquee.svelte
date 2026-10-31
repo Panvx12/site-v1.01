@@ -45,7 +45,7 @@
         letter-spacing: 0.15em;
     }
     .marquee .content span {
-        color: var(--sliver);
+        color: var(--silver);
     }
     @keyframes seamless-marquee {
         0% {

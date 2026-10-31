@@ -107,7 +107,7 @@
     }
     .annotation {
         margin: 0 0 5px 0;
-        color: var(--sliver);
+        color: var(--silver);
         font-size: 1rem;
     }
     .self {
