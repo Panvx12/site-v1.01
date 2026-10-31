@@ -25,7 +25,7 @@
 <style>
     .progress {
         margin: 20px auto;
-        width: 80%;
+        width: 100%;
         height: fit-content;
         border: 1px solid #333;
         padding: 20px;

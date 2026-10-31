@@ -22,7 +22,7 @@
         text-shadow: 0 0 3px  rgba(102, 103, 103, 0.8);
     }
     .content {
-        padding: 0 50px;
+        padding: 0 min(7svw,100px);
         margin: auto;
         width: min(var(--initContentWidth),var(--maxContentWidth));
     }

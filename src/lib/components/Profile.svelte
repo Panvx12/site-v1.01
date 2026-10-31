@@ -103,7 +103,7 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
         gap: 20px;
-        width: 70%;
+        width: 100%;
     }
     .annotation {
         margin: 0 0 5px 0;

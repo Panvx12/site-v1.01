@@ -39,7 +39,7 @@
     }
     .content {
         margin: auto;
-        padding: 0 50px;
+        padding: 0 min(7svw,100px);
         width: min(100svw,var(--maxContentWidth))
     }
     .annotation {
@@ -50,7 +50,7 @@
     .avatar {
         display: block;
         margin: auto;
-        width: 80%;
+        width: 100%;
     }
     @media (max-width: 1100px) {
         h1 {
