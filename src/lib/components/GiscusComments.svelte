@@ -14,11 +14,11 @@
         scriptEl.setAttribute("data-category-id", "DIC_kwDOU84wkM4DI_oD");
         scriptEl.setAttribute("data-mapping", "pathname");
         scriptEl.setAttribute("data-strict", "0");
-        scriptEl.setAttribute("data-reactions-enabled", "1");
+        scriptEl.setAttribute("data-reactions-enabled", "0");
         scriptEl.setAttribute("data-emit-metadata", "0");
         scriptEl.setAttribute("data-input-position", "top");
         scriptEl.setAttribute("data-theme", "light");
-        scriptEl.setAttribute("data-lang", "zh-TW");
+        scriptEl.setAttribute("data-lang", "en");
         scriptEl.setAttribute("data-loading", "lazy");
         scriptEl.crossOrigin = "anonymous";
         scriptEl.async = true;
@@ -32,11 +32,3 @@
 </script>
 
 <div bind:this={commentContainer} class="giscus-wrapper"></div>
-
-<style>
-    .giscus-wrapper {
-        margin: 0 5px;
-        padding: 0 5px;
-        width: 100%;
-    }
-</style>

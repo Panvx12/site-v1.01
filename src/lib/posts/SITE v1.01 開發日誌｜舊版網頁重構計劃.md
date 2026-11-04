@@ -1,40 +1,32 @@
 ---
-title: SITE v1.01 開發日誌｜舊版網頁重構計劃
+title: 【SITE v1.01】Dev Log | Website Redesign Plan
+author: waffle
 date: 2026.10.18
-tags: ["Svelte", "網頁開發","開發日誌"]
+tags: ["svelte","web","log"]
 ---
+## 1. Motivation for the Redesign
 
-### 一、製作網頁動機
+Although I had previously developed a simple personal website, it was primarily created as an initial learning project. Due to my limited experience at the time, the website had several shortcomings, including a cluttered layout, a lack of clear design direction, and limited maintainability and scalability. Taking this opportunity, I decided to rethink the website's overall design and establish a clearer direction for its future development. By adopting modern web development tools, I aim to build a more structured foundation that is easier to maintain and expand.
 
-雖然先前有製作過簡易的個人官方網站，但由於僅是用於初步學習性質，在製作上有些生疏，因此存在一些問題。
+**Related Link:**  
+- [previous website](https://panvx12.github.io/Web/Home/home.html)
 
-- 版面雜亂
-- 缺乏設計方向
-- 網站難以維護或擴增功能
+## 2. Website Objectives and Future Direction
 
-因此透過這次機會重新規劃設計風格與定義網站發展方向，並利用新的網站開發工具使網站具備可維護性與可擴充性。
+The primary purpose of this website is to serve as a platform for showcasing my personal profile, portfolio, and various written articles. It is also designed with future expansion in mind, allowing additional features to be introduced as new ideas and requirements emerge.
 
-> 舊網站網址👉 <https://panvx12.github.io/Web/Home/home.html>
+## 3. Development Tools
 
-### 二、網頁發展方向
+Svelte was selected as the primary framework for this project due to its concise and efficient syntax, flexible modular architecture, convenient component development, and built-in style scoping. These features provide a more organized development workflow, encourage component reusability, and help maintain code independence, making Svelte a suitable choice for building a maintainable and extensible website.
 
-本網站的核心功能為展示個人簡介、作品集及各類文章，未來或許會再擴充新的功能 (ex: 😵目前沒想法)。
+**Related Link:**  
+- [SVELTE official website](https://svelte.dev/)
 
-### 三、開發工具
+## 4. AI-Assisted Development Disclosure
 
-這次網頁開發主要用 Svelte 這個工具，因為它的 4 大特點：
+AI tools were incorporated into the development process to assist with specific creative and technical tasks. ChatGPT was used to create virtual characters based on custom prompts and generate initial website templates. Strikingly AI assisted with the design and creation of the website logo. Gemini served as a reference tool for understanding and implementing unfamiliar or previously forgotten syntax, with its suggestions subsequently reviewed and manually refined to improve development efficiency.
 
-- 語法精簡高效
-- 高彈性的模組化開發
-- 方便的元件開發工具
-- 完善的封裝與作用域隔離
-
-> Svelte 官網👉 <https://svelte.dev/>
-
-### 四、AI 輔助聲明
-
-本次網頁有用 AI 來輔助開發。ChatGPT 根據提示詞創作虛擬角色並建立母版。Strikingly AI 負責網頁 Logo 設計。Gemini 用於協助實現不懂或遺忘的語法，再透過手動調整，提升製作效率。
-
-> ChatGPT 👉 <https://chatgpt.com><br>
-> Strikingly 官網 👉 <https://tw.strikingly.com><br>
-> Gemini 👉 <https://gemini.google.com>
+**Related Links:**
+- [chatGPT official website](https://chatgpt.com/)
+- [strikingly official website](https://tw.strikingly.com/)
+- [gemini official website](https://gemini.google.com/)

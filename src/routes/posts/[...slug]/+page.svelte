@@ -7,7 +7,15 @@
 
 <section class="content">
     <article>
-        <h1>{data.metadata?.title || '未命名文章'}</h1>
+        <div class="meta">
+            <h1>{data.metadata?.title || "unknown"}</h1>
+            <p>Author: {data.metadata?.author || "anonymous"}</p>
+            <p>Date: {data.metadata?.date || "unknown"}</p>
+            <div>
+            <span>Tags: </span>
+                <span>{data.metadata?.tags?.join(', ') || "unknown"}</span>
+            </div>
+        </div>
         <hr>
         {#if ContentComponent}
             <ContentComponent />
@@ -21,13 +29,6 @@
 </section>
 
 <style>
-    h1 {
-        width: fit-content;
-        margin: auto;
-        font-weight: 700;
-        font-size: 1.5rem;
-        overflow-wrap: break-word;
-    }
     .content {
         display: flex;
         flex-direction: column;
@@ -37,14 +38,52 @@
         padding: 10px 20px 0 20px;
         width: min(100svw,var(--maxContentWidth))
     }
-    article {
+
+    article{
         padding: 10px 10px 0 10px;
-        width: 50%;
+        width: 70%;
         overflow-wrap: break-word;
     }
+    article :global(h2) {
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-top: 20px;
+        margin-bottom: 5px;
+    }
+    article :global(p) {
+        margin: 5px 0;
+    }
+    article :global(ul) {
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+    }
+    article :global(li) {
+        position: relative;
+        padding-left: 10px;
+    }
+    article :global(li::before) {
+        content: "›";
+        position: absolute;
+        left: 0;
+    }
+
+    .meta {
+        p {
+            margin: 0;
+        }
+        h1 {
+            width: fit-content;
+            margin: auto;
+            margin-bottom: 10px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            overflow-wrap: break-word;
+        }
+    }
+
     .comments {
-        padding: 10px 10px 0 10px;
-        width: 50%;
+        width: 70%;
     }
     :global(blockquote) {
         margin: 1rem 0;
