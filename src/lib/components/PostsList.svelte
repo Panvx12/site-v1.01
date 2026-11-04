@@ -228,7 +228,7 @@
         .posts-container {
             width: 100%;
             grid-template-columns: none;
-
+            gap: 10px;
         }
     }
 </style>
