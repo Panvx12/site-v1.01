@@ -199,7 +199,6 @@
             background-image: url(../../../src/lib/assets/cover1.webp);
             background-position: center top;
         }
-
         .content {
             grid-template-columns: 1fr;
             grid-template-rows: repeat(2, 1fr);
