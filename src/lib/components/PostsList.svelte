@@ -141,7 +141,6 @@
         border: none;
         background: none;
         padding: 0 5px;
-        margin: 0 0 10px 10px;
         font: inherit;
         font-size: 0.9rem;
         color: var(--silver);
