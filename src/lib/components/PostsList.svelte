@@ -67,7 +67,7 @@
     }
 </script>
 
-<!-- 遞迴顯示資料夾與檔案的內部組件 -->
+<!-- Recursively display the contents of folders and files -->
 {#snippet renderTree(subTree: Record<string, any>, currentPath = '')}
     <ul class="file-tree-list">
         {#each Object.entries(subTree) as [name, node]}
@@ -75,7 +75,7 @@
             
             <li class="tree-item">
                 {#if node.type === 'folder'}
-                    <!-- 資料夾項目 -->
+                    <!-- folders -->
                     <button type="button" class="folder-header" onclick={() => toggleFolder(fullPath)}>
                         <span class="icon">{openFolders[fullPath] ? '📂' : '📁'}</span>
                         <span class="name">{name}</span>
@@ -88,7 +88,7 @@
                         </div>
                     {/if}
                 {:else}
-                    <!-- 檔案（文章）項目 -->
+                    <!-- files -->
                     <a href={resolve('/posts/[...slug]', { slug: node.post.slug })} class="file-link">
                         <span class="icon">📄</span>
                         <span class="name">{node.post.title}</span>
@@ -168,7 +168,7 @@
         margin: 0.2rem 0;
     }
 
-    /*針對第一層 file-tree-list 不縮排**/
+    /* Disable indentation for the top-level `file-tree-list` */
     .explorer-sidebar > .file-tree-list {
         padding-left: 0;
     }
