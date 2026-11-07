@@ -58,14 +58,38 @@
         margin: 0;
         padding-left: 0;
     }
-    article :global(li) {
+    article :global(ul > li) {
         position: relative;
         padding-left: 10px;
     }
-    article :global(li::before) {
+    article :global(ul > li::before) {
         content: "›";
         position: absolute;
         left: 0;
+    }
+    /* Markdown 程式碼區塊 (Code Block) 樣式 */
+    article :global(pre) {
+        background-color: #f6f8fa;
+        border: 1px solid #d0d7de;
+        border-radius: 6px;
+        padding: 12px 16px;
+        overflow-x: auto;
+        margin: 10px 0;
+    }
+    article :global(pre)::-webkit-scrollbar {
+        height: 3px; /* 降低滑條高度 */
+    }
+    article :global(pre code) {
+        font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+        font-size: 0.9rem;
+        line-height: 1.45;
+        color: #24292f;
+    }
+    article :global(:not(pre) > code) {
+        background-color: #afb8c133;
+        padding: 0.2em 0.4em;
+        border-radius: 6px;
+        font-size: 85%;
     }
 
     .meta {
