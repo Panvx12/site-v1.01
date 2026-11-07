@@ -56,7 +56,8 @@
     );
     let selectedTag = $state<string | null>(null);
     let filteredPosts = $derived(
-        selectedTag ? posts.filter(post => post.tags.includes(selectedTag as string)) : posts
+        [...selectedTag ? posts.filter(post => post.tags.includes(selectedTag as string)) : posts]
+            .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     );
     let fileTree = $derived(getFileTree(filteredPosts));
 
@@ -152,6 +153,7 @@
         color: black;
     }
     .tag-btn.active {
+        color: black;
         background: none;
         text-decoration: underline;
     }
