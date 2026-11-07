@@ -5,11 +5,10 @@ const posts = import.meta.glob('#lib/posts/**/*.md');
 export async function entries() {
     const entriesList = Object.keys(posts).map((path) => {
         const relativePath = path.split('posts/')[1] || '';
-        const slug = relativePath.replace('.md', ''); // 例如 "tech/frontend/svelte"
-        
-        // 這裡直接回傳字串，符合 RouteParams 的型別要求
+        const slug = relativePath.replace('.md', ''); // ex: "tech/frontend/svelte"
         return { slug };
     });
+
     return entriesList;
 }
 
@@ -17,7 +16,7 @@ export const prerender = true;
 
 export async function load({ params }) {
     try {
-        // params.slug 在 [...slug] 路由中會是字串（例如 "tech/frontend/svelte"）
+        // In a [...slug] route, params.slug will be a string (e.g., "tech/frontend/svelte").
         const slugParam = Array.isArray(params.slug) ? params.slug.join('/') : params.slug;
 
         const matchedPath = Object.keys(posts).find((path) => 

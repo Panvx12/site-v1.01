@@ -67,7 +67,7 @@
         position: absolute;
         left: 0;
     }
-    /* Markdown 程式碼區塊 (Code Block) 樣式 */
+    /* Markdown Code Block Style */
     article :global(pre) {
         background-color: #f6f8fa;
         border: 1px solid #d0d7de;
@@ -77,7 +77,7 @@
         margin: 10px 0;
     }
     article :global(pre)::-webkit-scrollbar {
-        height: 3px; /* 降低滑條高度 */
+        height: 3px; /* Reduce scrollbar height */
     }
     article :global(pre code) {
         font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
