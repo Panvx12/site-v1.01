@@ -30,21 +30,71 @@
             tags: file.metadata?.tags || [],
         };
     });
+
     // get all unique tags from posts and transform to a set
     const allTags = $derived(
         Array.from(new Set(posts.flatMap(post => post.tags)))
     );
+
     // state for selected tag and filtered posts
     let selectedTag = $state<string | null>(null);
+
+    // derived state to get the latest date for each folder
+    const folderLatestDateMap = $derived(() => {
+        const map = new Map<string, number>();
+        for (const post of posts) {
+            if (post.pathSegments.length > 1) {
+                const folderName = post.pathSegments[0];
+                const time = post.date ? new Date(post.date).getTime() || 0 : 0;
+                const existingTime = map.get(folderName) || 0;
+                if (time > existingTime) {
+                    map.set(folderName, time);
+                }
+            }
+        }
+        return map;
+    });
+
     let filteredPosts = $derived(
         [...selectedTag ? posts.filter(post => post.tags.includes(selectedTag as string)) : posts]
-            .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    );
+            .sort((a, b) => {
+                const isRootA = a.pathSegments.length === 1;
+                const isRootB = b.pathSegments.length === 1;
+                const folderA = isRootA ? '' : a.pathSegments[0];
+                const folderB = isRootB ? '' : b.pathSegments[0];
+
+                if (folderA !== folderB) {
+                    // sort by folder first (if they are in different folders)
+                    const timeA = isRootA
+                        ? (a.date ? new Date(a.date).getTime() || 0 : 0)
+                        : (folderLatestDateMap().get(folderA) || 0);
+                    const timeB = isRootB
+                        ? (b.date ? new Date(b.date).getTime() || 0 : 0)
+                        : (folderLatestDateMap().get(folderB) || 0);
+                    return timeB - timeA;
+                }       
+
+                // if both are in the same folder, sort by date (newest first) and then by title
+                if (!isRootA && !isRootB) {
+                    return a.title.localeCompare(b.title);
+                }
+
+                // if both are in the root directory, sort by date (newest first) and then by title
+                const timeA = a.date ? new Date(a.date).getTime() || 0 : 0;
+                const timeB = b.date ? new Date(b.date).getTime() || 0 : 0;
+                const dateDiff = timeB - timeA;
+                if (dateDiff !== 0) return dateDiff;
+
+                // if both are in the root directory and have the same date, sort by title
+                return a.title.localeCompare(b.title);
+            })
+    ); 
+
     let fileTree = $derived(getFileTree(filteredPosts));
     // state for open folders in the file tree
     let openFolders = $state<Record<string, boolean>>({});
 
-    
+
     // helper function to build a nested file tree structure from the flat list of posts
     function getFileTree(postList: PostItem[]) {
         const tree: Record<string, any> = {};
