@@ -4,7 +4,7 @@ author: "waffle"
 date: "2026.11.07"
 tags: ["dev","C/C++","Python",".NET"]
 ---
-# Section 1: C/C++
+## Section 1: C/C++
 
 ### 1. Prerequisites
 - Get the latest version of MinGW-w64 via [MSYS2](https://www.msys2.org).
@@ -36,7 +36,7 @@ tags: ["dev","C/C++","Python",".NET"]
 - Build System for C/C++: [CMake](https://cmake.org/)
 - Game Development Libraries for C/C++: [raylib](https://www.raylib.com/)、[SFML](https://www.sfml-dev.org/)、[SDL](https://www.libsdl.org/)
 
-# Section 2: Python
+## Section 2: Python
 
 ### 1. Prerequisites & Installation
 1. Download and install the latest version of Python from [Python Official Downloads](https://www.python.org/downloads/).
@@ -57,7 +57,7 @@ tags: ["dev","C/C++","Python",".NET"]
    pip install package_name
    ```
 
-# Section 3: DotNet (.NET)
+## Section 3: DotNet (.NET)
 
 ### 1. Prerequisites & Installation
 1. Install Visual Studio Code via [VS Code Official Site](https://code.visualstudio.com).
