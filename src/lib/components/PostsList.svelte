@@ -44,6 +44,7 @@
     // state for open folders in the file tree
     let openFolders = $state<Record<string, boolean>>({});
 
+    
     // helper function to build a nested file tree structure from the flat list of posts
     function getFileTree(postList: PostItem[]) {
         const tree: Record<string, any> = {};
