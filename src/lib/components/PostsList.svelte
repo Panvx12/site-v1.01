@@ -16,14 +16,12 @@
         tags: string[];
     }
 
-
+    // all posts data
     const postFiles = import.meta.glob('#lib/posts/**/*.md', { eager: true }) as Record<string, PostFile>;
     const posts: PostItem[] = Object.entries(postFiles).map(([path, file]) => {
-        // 例如 path 是 "/src/posts/tech/js.md" 或 "src/posts/tech/js.md"
-        // 用 split('posts/') 抓取後面「tech/js.md」這段
         const relativePath = path.split('posts/')[1] || '';
-        const slug = relativePath.replace('.md', ''); // 變成 "tech/js"
-        const pathSegments = slug.split('/'); // 變成 ['tech', 'js']   
+        const slug = relativePath.replace('.md', '');
+        const pathSegments = slug.split('/'); 
         return {
             slug,
             pathSegments,
@@ -32,7 +30,21 @@
             tags: file.metadata?.tags || [],
         };
     });
+    // get all unique tags from posts and transform to a set
+    const allTags = $derived(
+        Array.from(new Set(posts.flatMap(post => post.tags)))
+    );
+    // state for selected tag and filtered posts
+    let selectedTag = $state<string | null>(null);
+    let filteredPosts = $derived(
+        [...selectedTag ? posts.filter(post => post.tags.includes(selectedTag as string)) : posts]
+            .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    );
+    let fileTree = $derived(getFileTree(filteredPosts));
+    // state for open folders in the file tree
+    let openFolders = $state<Record<string, boolean>>({});
 
+    // helper function to build a nested file tree structure from the flat list of posts
     function getFileTree(postList: PostItem[]) {
         const tree: Record<string, any> = {};
         postList.forEach(post => {
@@ -49,21 +61,7 @@
         });
         return tree;
     }
-
-
-    const allTags = $derived(
-        Array.from(new Set(posts.flatMap(post => post.tags)))
-    );
-    let selectedTag = $state<string | null>(null);
-    let filteredPosts = $derived(
-        [...selectedTag ? posts.filter(post => post.tags.includes(selectedTag as string)) : posts]
-            .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    );
-    let fileTree = $derived(getFileTree(filteredPosts));
-
-
-    let openFolders = $state<Record<string, boolean>>({});
-
+    // function to toggle the open/closed state of a folder in the file tree
     function toggleFolder(path: string) {
         openFolders[path] = !openFolders[path];
     }
