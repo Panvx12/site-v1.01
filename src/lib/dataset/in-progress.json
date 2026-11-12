@@ -16,7 +16,8 @@
         "progress": "0%",
         "description": "Learing the HDVL",
         "techStack": [
-            "SystemVerilog"
+            "SystemVerilog",
+            "HDVL"
         ]
     },
     {
