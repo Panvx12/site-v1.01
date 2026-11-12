@@ -1,9 +1,19 @@
 [
     {
         "title": "SITE v1.01",
-        "status": "開發中",
+        "status": "Develop",
         "progress": "81%",
         "description": "根據初代網頁問題進行修改",
-        "techStack": ["SVELTE","HTML","CSS"]
+        "techStack": [
+            "SVELTE",
+            "HTML",
+            "CSS"
+        ]
+    },
+    {
+        "title": "NONE",
+        "description": "???: 💧︎❄︎✋︎☹︎☹︎ ✌︎💧︎☜︎👍︎☼︎☜︎❄︎📬︎",
+        "status": "Undefined",
+        "progress": "NULL_PTR_23.30229%"
     }
 ]
