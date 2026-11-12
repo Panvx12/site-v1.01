@@ -15,16 +15,20 @@ tags: ["dev","C/C++","Python",".NET"]
 1. In the MSYS2 setup wizard, choose your desired Installation Folder. Record this directory for later use. 
 2. When setup is complete, ensure the Run MSYS2 now box is checked and select Finish.
 3. In the MSYS2 terminal, install the MinGW-w64 toolchain by running the following command:
-   ```bash
-   pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
-   ```
+
+```bash
+pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
+```
+
 4. Add the path of your `ucrt64` bin folder (default path: `C:\msys64\ucrt64\bin`) to the Windows PATH environment variables.
 5. Verify the MinGW installation by running the following commands in your terminal:
-   ```bash
-   gcc --version
-   g++ --version
-   gdb --version
-   ```
+
+```bash
+gcc --version
+g++ --version
+gdb --version
+```
+
 ### 3. Start Your First Project
 1. Create a folder for storing your C/C++ source files.
 2. Open Visual Studio Code.
@@ -43,19 +47,19 @@ tags: ["dev","C/C++","Python",".NET"]
 2. Install Visual Studio Code via [VS Code Official Site](https://code.visualstudio.com).
 3. Install the Python extension for VS Code.
 4. Verify the Python installation by running the following command in your terminal:
-   ```cmd
-   python --version
-   ```
+```cmd
+python --version
+```
 
 ### 2. Install and Use Packages
 1. Check the installed version of `pip`:
-   ```cmd
-   pip --version
-   ```
+```cmd
+pip --version
+```
 2. Install external Python packages using `pip` in your terminal:
-   ```cmd
-   pip install package_name
-   ```
+```cmd
+pip install package_name
+```
 
 ## Section 3: DotNet (.NET)
 
@@ -64,9 +68,10 @@ tags: ["dev","C/C++","Python",".NET"]
 2. Install the C# and C# Dev Kit extensions for VS Code.
 3. Install the [.NET Software Development Kit (SDK)](https://dotnet.microsoft.com/zh-tw/download).
 4. Verify the .NET SDK installation by running the following command in your terminal:
-   ```cmd
-   dotnet --version
-   ```
+```cmd
+dotnet --version
+```
+
 ## References
 
 1.	VS code C/C++: https://code.visualstudio.com/docs/languages/cpp.
