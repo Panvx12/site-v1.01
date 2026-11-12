@@ -3,11 +3,29 @@
         "title": "SITE v1.01",
         "status": "Develop",
         "progress": "81%",
-        "description": "根據初代網頁問題進行修改",
+        "description": "Reconstructing the original webpage",
         "techStack": [
             "SVELTE",
             "HTML",
             "CSS"
+        ]
+    },
+    {
+        "title": "SystemVerilog",
+        "status": "Learn",
+        "progress": "0%",
+        "description": "Learing the HDVL",
+        "techStack": [
+            "SystemVerilog"
+        ]
+    },
+    {
+        "title": "Rust",
+        "status": "Learn",
+        "progress": "0%",
+        "description": "Learing new programming language",
+        "techStack": [
+            "Rust"
         ]
     },
     {
