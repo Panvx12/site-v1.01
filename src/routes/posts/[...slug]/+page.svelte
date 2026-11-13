@@ -1,48 +1,71 @@
 <script>
 	import { onMount } from 'svelte';
 	import GiscusComments from '#lib/components/GiscusComments.svelte';
+
 	/** @type {import('./$types').PageProps} */
 	let { data } = $props();
+
 	let ContentComponent = $derived(data.content);
 
 	onMount(() => {
-		const codeBlocks = document.querySelectorAll('article pre');
+		const article = document.querySelector('.content article');
 
-		codeBlocks.forEach((pre) => {
-			if (pre.parentElement?.classList.contains('pre-wrapper')) return;
+		if (!article) return;
 
-			const wrapper = document.createElement('div');
-			wrapper.className = 'pre-wrapper';
+		const setupCopyButtons = () => {
+			const codeBlocks = article.querySelectorAll('pre');
 
-			pre.parentNode?.insertBefore(wrapper, pre);
-			wrapper.appendChild(pre);
+			codeBlocks.forEach((pre) => {
+				if (pre.parentElement?.classList.contains('pre-wrapper')) return;
 
-			// 3. 建立複製按鈕
-			const button = document.createElement('button');
-			button.className = 'copy-btn';
-			button.type = 'button';
-			button.textContent = 'Copy';
+				const wrapper = document.createElement('div');
+				wrapper.className = 'pre-wrapper';
 
-			button.addEventListener('click', async () => {
-				const textToCopy = pre.textContent || '';
+				pre.parentNode?.insertBefore(wrapper, pre);
+				wrapper.appendChild(pre);
 
-				try {
-					await navigator.clipboard.writeText(textToCopy);
-					button.textContent = 'Copied';
-					button.classList.add('copied');
+				const button = document.createElement('button');
+				button.className = 'copy-btn';
+				button.type = 'button';
+				button.textContent = 'Copy';
 
-					setTimeout(() => {
-						button.textContent = 'Copy';
-						button.classList.remove('copied');
-					}, 2000);
-				} catch (err) {
-					console.error('Copy Failed:', err);
-					button.textContent = 'Failed';
-				}
+				button.addEventListener('click', async () => {
+					const textToCopy = pre.textContent || '';
+
+					try {
+						await navigator.clipboard.writeText(textToCopy);
+
+						button.textContent = 'Copied';
+						button.classList.add('copied');
+
+						setTimeout(() => {
+							button.textContent = 'Copy';
+							button.classList.remove('copied');
+						}, 2000);
+					} catch (err) {
+						console.error('Copy Failed:', err);
+						button.textContent = 'Failed';
+					}
+				});
+
+				wrapper.appendChild(button);
 			});
+		};
 
-			wrapper.appendChild(button);
+		setupCopyButtons();
+
+		const observer = new MutationObserver(() => {
+			setupCopyButtons();
 		});
+
+		observer.observe(article, {
+			childList: true,
+			subtree: true
+		});
+
+		return () => {
+			observer.disconnect();
+		};
 	});
 </script>
 
