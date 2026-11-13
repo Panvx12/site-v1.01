@@ -143,3 +143,7 @@ endmodule
 1. 為簡單的 SRAM（`addr`、`wdata`、`rdata`、`we`、`en`）設計 interface，含 `master`/`slave` modport。
 2. 在 interface 中加入 `write` 與 `read` task，在 testbench 中呼叫。
 3. 為 interface 加入 clocking block，比較「有」與「沒有」時的取樣差異。
+
+---
+
+⬅️ [上一章：5. 時序邏輯與FSM](05_時序邏輯與FSM) ｜ [📚 回目錄](00_目錄與學習路線) ｜ [下一章：7. Testbench基礎](07_Testbench基礎) ➡️

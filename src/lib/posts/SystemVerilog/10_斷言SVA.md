@@ -154,3 +154,7 @@ bind dut my_checker u_chk (.clk(clk), .rst_n(rst_n), .req(req), .ack(ack));
 2. 寫斷言：`start` 拉高後，`busy` 必須在 2 個週期內拉高，且 `done` 前保持。
 3. 為 FIFO 寫斷言：空時不可讀、滿時不可寫、`count` 在 0~DEPTH 之間。
 4. 對上述每個 assert，再寫一個對應的 `cover property`。
+
+---
+
+⬅️ [上一章：9. 隨機化與約束](09_隨機化與約束) ｜ [📚 回目錄](00_目錄與學習路線) ｜ [下一章：11. 功能覆蓋率](11_功能覆蓋率) ➡️

@@ -169,3 +169,7 @@ end
 1. 為第 4 章的 `alu` 寫 testbench，用 `foreach` 窮舉 `op` 並以參考函式比對結果。
 2. 為移位暫存器寫 testbench，輸入固定序列並驗證輸出。
 3. 用 `fork...join_any` 實作「等待 `done` 或逾時」。
+
+---
+
+⬅️ [上一章：6. Interface與Modport](06_Interface與Modport) ｜ [📚 回目錄](00_目錄與學習路線) ｜ [下一章：8. 物件導向OOP](08_物件導向OOP) ➡️

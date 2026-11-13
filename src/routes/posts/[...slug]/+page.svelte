@@ -204,6 +204,32 @@
 		}
 	}
 
+	article :global(table) {
+		width: 100%;
+		border-collapse: collapse;
+		margin: 1.5rem 0;
+		font-size: 0.95rem;
+		background-color: #ffffff;
+		border: 1px solid #d0d7de;
+	}
+	article :global(th),
+	article :global(td) {
+		padding: 10px 14px;
+		border-bottom: 1px solid #d0d7de;
+		text-align: left;
+	}
+	article :global(th) {
+		background-color: #f6f8fa;
+		font-weight: 600;
+		color: #24292f;
+	}
+	article :global(tr:last-child td) {
+		border-bottom: none;
+	}
+	article :global(tr:hover td) {
+		background-color: #f6f8fa33;
+	}
+
 	.meta {
 		p {
 			margin: 0;

@@ -168,3 +168,7 @@ endclass
 1. 建立 `Animal` 抽象類別，派生 `Dog`、`Cat`，各自實作 `speak()`，放進陣列用多型呼叫。
 2. 為 `Transaction` 實作 `copy()` 與 `compare()` 方法。
 3. 建立參數化的 `Queue` 包裝類別，提供 `enqueue`、`dequeue`、`size`。
+
+---
+
+⬅️ [上一章：7. Testbench基礎](07_Testbench基礎) ｜ [📚 回目錄](00_目錄與學習路線) ｜ [下一章：9. 隨機化與約束](09_隨機化與約束) ➡️
