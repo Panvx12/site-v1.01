@@ -17,7 +17,7 @@
 	}
 
 	// all posts data
-	const postFiles = import.meta.glob('../lib/posts/**/*.md', { eager: true }) as Record<
+	const postFiles = import.meta.glob('#lib/posts/**/*.md', { eager: true }) as Record<
 		string,
 		PostFile
 	>;

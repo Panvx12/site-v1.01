@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
 
-const posts = import.meta.glob('../lib/posts/**/*.md');
+const posts = import.meta.glob('#lib/posts/**/*.md');
 
 export async function entries() {
     const entriesList = Object.keys(posts).map((path) => {
