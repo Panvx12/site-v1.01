@@ -8,7 +8,7 @@ import { error } from '@sveltejs/kit';
  * }} PostModule
  */
 
-const posts = import.meta.glob('../../../lib/posts/**/*.md');
+const posts = import.meta.glob('#lib/posts/**/*.md');
 
 export function entries() {
     return Object.keys(posts).map((path) => {
