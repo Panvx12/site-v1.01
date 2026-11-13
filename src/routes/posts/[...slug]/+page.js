@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
 
-const posts = import.meta.glob('#lib/posts/**/*.md');
+const posts = import.meta.glob('../lib/posts/**/*.md');
 
 export async function entries() {
     const entriesList = Object.keys(posts).map((path) => {
@@ -19,7 +19,7 @@ export async function load({ params }) {
         // In a [...slug] route, params.slug will be a string (e.g., "tech/frontend/svelte").
         const slugParam = Array.isArray(params.slug) ? params.slug.join('/') : params.slug;
 
-        const matchedPath = Object.keys(posts).find((path) => 
+        const matchedPath = Object.keys(posts).find((path) =>
             path.endsWith(`/${slugParam}.md`) || path.endsWith(`${slugParam}.md`)
         );
 
@@ -29,7 +29,7 @@ export async function load({ params }) {
 
         const postLoader = posts[matchedPath];
         const post = /** @type {any} */ (await postLoader());
-        
+
         return {
             content: post.default,
             metadata: post.metadata
