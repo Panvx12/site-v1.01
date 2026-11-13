@@ -1,0 +1,91 @@
+# 5. 借用與參考（References）
+
+若每次都要轉移所有權會很麻煩，因此 Rust 提供**借用（borrowing）**：以參考 `&` 使用值而不取得所有權。
+
+### 5.1 不可變參考
+
+```rust
+fn length(s: &String) -> usize {
+    s.len()
+}
+
+fn main() {
+    let s = String::from("hello");
+    let n = length(&s);          // 借用 s
+    println!("{s} 長度 {n}");     // s 仍然有效
+}
+```
+
+### 5.2 可變參考
+
+```rust
+fn append(s: &mut String) {
+    s.push_str(", world");
+}
+
+fn main() {
+    let mut s = String::from("hello");
+    append(&mut s);
+    println!("{s}");
+}
+```
+
+### 5.3 借用規則
+
+在任一時間點，你只能擇一：
+
+- **任意數量**的不可變參考（`&T`），**或**
+- **唯一一個**可變參考（`&mut T`）。
+
+且參考必須**永遠有效**（不可懸垂）。
+
+```rust
+let mut s = String::from("hi");
+let r1 = &s;
+let r2 = &s;          // ✅ 多個不可變參考
+// let r3 = &mut s;   // ❌ 與不可變參考同時存在
+println!("{r1} {r2}");
+let r3 = &mut s;      // ✅ r1、r2 之後不再使用（NLL）
+r3.push('!');
+```
+
+> 這項規則在**編譯期**就防止了資料競爭。
+
+### 5.4 懸垂參考
+
+```rust
+// fn dangle() -> &String {          // ❌ 編譯錯誤
+//     let s = String::from("hi");
+//     &s                            // s 離開作用域被 drop，參考會懸垂
+// }
+
+fn no_dangle() -> String {           // ✅ 直接回傳所有權
+    String::from("hi")
+}
+```
+
+### 5.5 切片（Slice）
+
+切片是對連續序列的**參考**：
+
+```rust
+let s = String::from("hello world");
+let hello: &str = &s[0..5];
+let world: &str = &s[6..];
+
+let arr = [1, 2, 3, 4, 5];
+let part: &[i32] = &arr[1..3];   // [2, 3]
+```
+
+> 字串字面值（如 `"hello"`）的型別是 `&'static str`。函式參數建議使用 `&str` 而非 `&String`，更具彈性。
+
+> ⚠️ 字串切片按**位元組**索引，必須落在 UTF-8 字元邊界上，否則會 panic（中文字每字 3 bytes）。
+
+### 📝 練習 5
+
+1. 寫函式 `first_word(s: &str) -> &str`，回傳字串中第一個單字。
+2. 刻意寫出違反借用規則的程式，觀察編譯器的錯誤訊息並嘗試修正。
+
+---
+
+⬅️ [上一章：4. 所有權（Ownership）](04_所有權（Ownership）.md) ｜ [📚 回目錄](00_目錄.md) ｜ [下一章：6. 結構體與列舉](06_結構體與列舉.md) ➡️
