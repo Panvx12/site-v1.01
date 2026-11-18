@@ -1,5 +1,5 @@
 ---
-title: "【SITE v1.01】Dev Log | Website Redesign Plan"
+title: "【SITE v1.01】Dev Log"
 author: "waffle"
 date: "2026.10.18"
 tags: ["svelte","web","log"]
