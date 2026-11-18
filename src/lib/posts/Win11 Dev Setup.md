@@ -1,5 +1,5 @@
 ---
-title: "Win11 Dev Setup for C/C++, Python and .NET"
+title: "Win11 Dev Setup"
 author: "waffle"
 date: "2026.11.07"
 tags: ["dev","C/C++","Python",".NET"]
