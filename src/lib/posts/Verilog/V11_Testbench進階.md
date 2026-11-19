@@ -435,3 +435,7 @@ grep -q "PASSED" sim.log && echo "OK" || echo "FAIL"
 3. 為第 9 章的 `counter_mod10` 寫自我檢查 testbench：用整數 `expected` 自己數數，每個時脈比對。
 4. 為 `alu` 的 testbench 加上 `+SEED=n` 選項。（提示：`$value$plusargs("SEED=%d", seed)`。）
 5. 做突變測試：故意在 `alu` 裡改壞三個不同的地方，分別確認 testbench 都能抓到。
+
+---
+
+⬅️ [上一章：10. 有限狀態機](V10_有限狀態機) ｜ [📚 回目錄](V00_目錄與學習地圖) ｜ [下一章：12. 模組階層與參數化](V12_模組階層與參數化) ➡️

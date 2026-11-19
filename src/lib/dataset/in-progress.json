@@ -11,12 +11,12 @@
         ]
     },
     {
-        "title": "SystemVerilog",
+        "title": "Verilog",
         "status": "Learn",
-        "progress": "0%",
+        "progress": "8%",
         "description": "Learing the HDVL",
         "techStack": [
-            "SystemVerilog",
+            "Verilog",
             "HDVL"
         ]
     },
@@ -28,11 +28,5 @@
         "techStack": [
             "Rust"
         ]
-    },
-    {
-        "title": "NONE",
-        "description": "???: 💧︎❄︎✋︎☹︎☹︎ ✌︎💧︎☜︎👍︎☼︎☜︎❄︎📬︎",
-        "status": "Undefined",
-        "progress": "NULL_PTR_23.30229%"
     }
 ]
