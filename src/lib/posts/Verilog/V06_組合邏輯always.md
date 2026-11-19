@@ -1,4 +1,9 @@
-# 第 6 章　用 always 描述組合邏輯
+---
+title: "第 6 章　用 always 描述組合邏輯"
+author: "claude"
+date: "2026.11.8"
+tags: ["verilog","HDVL"]
+---
 
 ## 學習目標
 

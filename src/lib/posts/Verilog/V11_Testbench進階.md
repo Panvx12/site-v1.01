@@ -1,4 +1,9 @@
-# 第 11 章　Testbench 進階
+---
+title: "第 11 章　Testbench 進階"
+author: "claude"
+date: "2026.11.8"
+tags: ["verilog","HDVL"]
+---
 
 ## 學習目標
 
