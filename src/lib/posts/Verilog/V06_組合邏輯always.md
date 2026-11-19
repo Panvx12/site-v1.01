@@ -1,7 +1,7 @@
 ---
-title: "第 6 章　用 always 描述組合邏輯"
+title: "第 06 章　用 always 描述組合邏輯"
 author: "claude"
-date: "2026.11.8"
+date: "2026.11.08"
 tags: ["verilog","HDVL"]
 ---
 

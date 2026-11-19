@@ -1,7 +1,7 @@
 ---
 title: "第 11 章　Testbench 進階"
 author: "claude"
-date: "2026.11.8"
+date: "2026.11.08"
 tags: ["verilog","HDVL"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "第 14 章　綜合專題：UART 與學習資源"
 author: "claude"
-date: "2026.11.8"
+date: "2026.11.08"
 tags: ["verilog","HDVL"]
 ---
 
